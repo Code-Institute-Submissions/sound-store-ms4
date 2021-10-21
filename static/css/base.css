@@ -24,6 +24,10 @@ body {
     color: #011627 !important;
 }
 
+.fa-search {
+    color: #011627 !important;
+}
+
 .navbar {
     height: 300px;
     background-color: black;
@@ -440,6 +444,11 @@ body {
       max-width: 80%;
     }
 
+    .navbar-collapse {
+        background: #011627;
+        color: #fdfffc;
+    }
+
     .icon-media-query {
         height: 8px;
         width: 8px;
@@ -449,6 +458,10 @@ body {
         width: 7px;
         height: 7px;
         padding: 0px;
+    }
+
+    .nav-link {
+        color: #ff9f1c !important;
     }
 
     .dropdown-mobile {
@@ -474,9 +487,12 @@ body {
     .category-mob {
         justify-content: space-around;
     }
+
+    .category-head {
+        color: #ff9f1c;
+    }
   } 
 
-/*-----------------------------------Media Queries*/
 
 @media (min-width: 1200px) {
     .container {
