@@ -148,13 +148,9 @@ body {
     color: #011627;
 }
 
-.category-container {
-    justify-content: space-around;
-}
-
 .category-images {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
 
@@ -493,9 +489,17 @@ body {
     }
   } 
 
-  @media (max-width: 700px) {
+  @media (max-width: 764px) {
     .hero-mob {
         object-fit: cover;
+    }
+  }
+
+
+
+  @media (min-width: 994px) {
+    .category-container {
+        margin-left: 10rem;
     }
   }
 
@@ -503,6 +507,7 @@ body {
   .carousel {
     padding-top: 100px;
  }
+
 }
 
 @media (min-width: 1200px) {

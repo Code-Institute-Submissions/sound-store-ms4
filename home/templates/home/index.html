@@ -4,8 +4,6 @@
   | Home
 {% endblock %}
 
-{% block content %}
-
 {% block page_header %}
   <!--<div class="container header-container">
     <div class="row">
@@ -16,13 +14,14 @@
   </div>-->
 {% endblock %}
 
+{% block content %}
 <section>
     <div class="container-fluid ">
         <div class="row">
             <!--Mobile screen hero image and heading-->
             <div class="col-sm-12 d-md-none">
-                <h2 class="mob-logo pt-0 center">sound store</h2>
                 <img class="hero-mob pt-0 pb-0" src='./media/ms-4-hero-3.jpg' alt="Inner shop hero 1">
+                <h2 class="mob-logo pt-2 center">sound store</h2>
             </div>
             <!-- Hero Image Carousel for md and above screens -->
             <div class="d-none d-md-block col-md-12 pt-5">
@@ -42,5 +41,49 @@
             </div>
         </div>
     </div>
+</section>
+
+<!-- Category Links -->
+<section>
+  <h2 class="pt-1 mt-1 category-logo">Our Categories</h2>
+    <div class="container-fluid">
+        <div class="row d-flex flex-row w-100 category-container">
+          <div class="d-none d-md-block col-md-2 col-lg-4 p-2 category category-mob">
+            <a href="">
+            <img class="category-images " src="./media/drums-category.jpg" alt="Drum Set Category">
+            <p class="descriptor p-2">Drums</p>
+            </a>
+          </div>
+          <div class="d-none d-md-block col-md-2 col-lg-4 p-2 category category-mob">
+            <a href="">
+           <img class="category-images" src="./media/guitar100.jpg" alt="Guitar Category">
+           <p class="descriptor p-2">Guitars</p>
+           </a>
+         </div>
+         <div class="d-none d-md-block col-md-2 col-lg-4 p-2 category category-mob">
+           <a href="">
+           <img class="category-images" src="./media/bass-category.jpg" alt="Bass Guitar Category">
+           <p class="descriptor p-2">Bass</p>
+           </a>
+         </div>
+         <div class="d-none d-md-block col-md-2 col-lg-4 p-2 category category-mob">
+           <a href="">
+           <img class="category-images" src="./media/trumpet.jpg" alt="Brass Category">
+           <p class="descriptor p-2">Brass</p>
+           </a>
+         </div>
+         <div class="d-none d-md-block col-md-2 col-lg-4  p-2 category category-mob">
+           <a href="">
+           <img class="category-images" src="./media/viola.jpg" alt="String Instruments Category">
+           <p class="descriptor p-2">Strings</p>
+           </a>
+         </div>
+         <div class="d-none d-md-block col-md-2 col-lg-4  p-2 category category-mob">
+           <a href="">
+           <img class="category-images" src="./media/accessories.jpg" alt="Accessories Category">
+           <p class="descriptor p-2">Accessories</p>
+           </a>
+         </div>
+        </div>
 </section>
 {% endblock %}
