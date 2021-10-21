@@ -495,6 +495,14 @@ body {
     }
   }
 
+  @media (max-width: 764px) {
+  .category-images {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+  }
+
+}
 
 
   @media (min-width: 994px) {
