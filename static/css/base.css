@@ -209,6 +209,16 @@ body {
      border: 1px solid black;
  }
 
+ .cat-products {
+    font-family: 'Tenor Sans', serif;
+    color: #122c34;
+ }
+
+ .cat-products:hover {
+    text-decoration: none;
+    color: #36597d !important;
+ }
+
  .price {
     font-family: 'Tenor Sans', serif;
     color: #122c34;

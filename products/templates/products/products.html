@@ -19,7 +19,10 @@
   <div class="row">
       <div class="col text-center mt-0">
         <hr>
-          <h2 class="logo-font mt-4 center dark-blue">All Instruments</h2>
+
+        {% for c in current_categories %}
+          <h2><a href="{% url 'products' %}?category={{ c.name }}" class="logo-font cat-products mt-4 center dark-blue"><span><i>{{ c.friendly_name }}</i></span></a></h2>
+        {% endfor %}
 
          <!--Sort by options-->
          <div class="row mt-1 mb-2">
@@ -44,12 +47,7 @@
             </p>
         </div>
       </div>
-
-
-          {% for c in current_categories %}
-            <a href="{% url 'products' %}?category={{ c.name }}" class="under-product-head mr-4 text-center"><span>{{ c.friendly_name }}</span></a>
-          {% endfor %}
-      </div>
+    </div>
   </div>
 
   <div class="row">
