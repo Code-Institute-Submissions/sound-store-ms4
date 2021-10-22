@@ -193,6 +193,12 @@ body {
      justify-content: space-between;
  }
 
+ .free-delivery {
+    font-size: 1.3rem;
+    font-family: 'Tenor Sans', serif;
+    text-align: center;
+ }
+
  .product-name {
     font-family: 'Tenor Sans', serif;
     color: #122c34;
