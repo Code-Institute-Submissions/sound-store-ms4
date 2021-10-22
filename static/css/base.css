@@ -259,6 +259,10 @@ body {
     justify-content: space-around;
 }
 
+.rating-color {
+    color: gold !important;
+}
+
  /* -------------------------------- product_detail.html */
 
 .product-container {
