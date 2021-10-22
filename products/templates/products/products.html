@@ -5,18 +5,101 @@
 {% endblock %}
 
 {% block page_header %}
-  <!--<div class="container header-container">
+  <div class="container header-container">
     <div class="row">
       <div class="col">
 
       </div>
     </div>
-  </div>-->
+  </div>
 {% endblock %}
 
 {% block content %}
-<div class="mt-5 pt-5">
-{{ products }}
+<div class="container">
+  <div class="row">
+      <div class="col text-center mt-0">
+          <h2 class="logo-font mt-4 center dark-blue">All Instruments</h2>
+
+         <!--Sort by options-->
+         <div class="row mt-1 mb-2">
+          <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+              <div class="sort-select-wrapper w-50">
+                  <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                      <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                      <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                      <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                      <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                      <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                      <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                      <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                      <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                      <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                  </select>
+              </div>
+          </div>
+          <div class="col-12 col-md-6 order-md-first">
+            <p class="text-muted mt-3 text-center text-md-left">
+                {% if search_term or current_categories or current_sorting != 'None_None' %}
+                    <!--<span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>-->
+                {% endif %}
+                {{ products|length }} Products found{% if search_term %} for <strong>"{{ search_term }}"</strong>{% endif %}
+            </p>
+        </div>
+      </div>
+
+
+          {% for c in current_categories %}
+            <a href="{% url 'products' %}?category={{ c.name }}" class="under-product-head mr-4 text-center"><span>{{ c.friendly_name }}</span></a>
+          {% endfor %}
+      </div>
+  </div>
+
+  <div class="row">
+    {% for product in products %}
+    <hr class="w-100 mt-3">
+      <div class="col-12 product-container">
+        {% if product.image %}
+        <a href="{% url 'product_detail' product.id %}">
+            <img class="product-img img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+        </a>
+        {% else %}
+        <a href="{% url 'product_detail' product.id %}">
+            <img class="product-img img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+        </a>
+        {% endif %}
+        <div class="name-rating-container">
+        <p><a class="mb-0 product-name detail-link" href="{% url 'product_detail' product.id %}">{{ product.name }}</a></p>
+        {% if product.category %}
+        <p>
+        <a href="" class="text-muted">
+          <small class="text-muted"><i class="fa fa-sort mr-1" aria-hidden="true"></i>{{ product.category.friendly_name }}</small>
+        </a>
+        </p>
+        {% endif %}
+        {% if product.rating %}
+          <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+        {% else %}
+          <small class="text-muted">There is no rating for this product, yet!</small>
+        {% endif %}
+        </div>
+        <div class="price-and-btns">
+            <p class="lead text-left font-weight-bold price">Our Price: ${{ product.price }}</p>
+            {% if request.user.is_superuser %}
+              <div class="admin-btns pt-5">
+                <a class="edit btn" href="">Edit</a>
+                <a class="delete btn" href="">Delete</a>
+              </div>
+            {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="btt-button shadow-sm rounded-0 border border-black">
+  <a class="btt-link d-flex h-100">
+      <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+  </a>	
+</div>
 </div>
            
 {% endblock %}
