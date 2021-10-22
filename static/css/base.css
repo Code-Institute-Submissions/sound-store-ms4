@@ -416,6 +416,12 @@ body {
     right: 36px;
 }
 
+.cart-images {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
 .arrow-primary {
     border-bottom-color: #36597D !important;
 }
