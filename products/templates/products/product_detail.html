@@ -55,12 +55,12 @@
               <p class="lead font-weight-bold price-detail mt-5"><span class="price-color">Our Price: ${{ product.price }}</span></p>
               <p class="free-delivery">Spend €{{ free_delivery_threshold }} for free delivery!</p>
             
-              <form class="form" action="" method="POST">
+              <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                 {% csrf_token %}
                 <div class="form-row">
                     <div class="col-12">
                         <p class="mt-3"><strong>Quantity:</strong></p>
-                        <div class="form-group w-50">
+                        <div class="form-group w-100">
                             <div class="input-group input-quantity">
                                 <div class="input-group-prepend">
                                     <!-- Decrement Quantity -->
@@ -88,21 +88,18 @@
                             </div>
                         </div>
                         {% if request.user.is_superuser %}
-                  {% endif %}
-                  <div class="admin-btns">
-                    <a class="btn edit" href="">Edit</a>
-                    <a class="btn delete" href="">Delete</a>
-                  </div>
-                </div>
+                          <div class="admin-btns">
+                              <a class="btn edit" href="">Edit</a>
+                              <a class="btn delete" href="">Delete</a>
+                          </div>
+                        </div>
+                        {% endif %}
 
                     <div class=" col-12">
-                        <a href="{% url 'products' %}" class="btn orange rounded-0 mt-5">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase orange">Back to shop</span>
+                        <a href="{% url 'products' %}" class="btn orange  mt-5">
+                            <span class="text-uppercase btn orange btn-links">Back to shop</span>
                         </a>
-                        <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                        <input type="submit" class="btn btn-links text-uppercase mt-5" value="Add to Cart">
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
