@@ -22,7 +22,7 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col text-center mt-3">
+        <div class="col text-center mt-3 order-conf">
             <h2 class="logo-font mt-5 mb-5 center"><i>Thanks for your order</i></h2>
             <hr>
             <p>You will receive a confirmation of you order at <i>{{ order.email }}</i></p>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="row">
-       <div class="col-12 col-lg-7">
+       <div class="col-12 col-lg-7 ">
          <!--Order Summary-->
          <div class="order-confirmation-wrapper p-2 border">
            <div class="row">
@@ -221,7 +221,7 @@
        </div>
     </div>
     <div class="row">
-      <div class="col-12 col-lg-7">
+      <div class="col-12 center">
         {% if from_profile %}
         <a href="" class="btn">Back to Profile</a>
         {% else %}
