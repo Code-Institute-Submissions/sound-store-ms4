@@ -24,7 +24,7 @@ class StripeWH_Handler:
 
     def handle_payment_intent_payment_failed(self, event):
         """
-        Handle payment_intent.payment_failed webhook 
+        Handle payment_intent.payment_failed 
         """
         return HttpResponse(
             content=f'{event["type"]} Webhook was received',
