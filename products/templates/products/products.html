@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_title %}
-  | Products
+  | Instruments
 {% endblock %}
 
 {% block page_header %}
@@ -21,7 +21,7 @@
         <hr>
 
         {% for c in current_categories %}
-          <h2><a href="{% url 'products' %}?category={{ c.name }}" class="logo-font cat-products mt-4 center dark-blue"><span><i>{{ c.friendly_name }}</i></span></a></h2>
+          <h2><a href="{% url 'products' %}?category={{ c.name }}" class="logo-font cat-products mt-4 center dark-blue "><span><i>{{ c.friendly_name }}</i></span></a></h2>
         {% endfor %}
 
          <!--Sort by options-->
