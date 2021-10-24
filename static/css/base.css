@@ -207,6 +207,12 @@ body {
 
  .btn-links {
      border: 1px solid black !important;
+     color: #011627;
+ }
+
+ .btn-links:hover {
+    border: 1px solid #5e7a97 !important;
+    color: #5e7a97;
  }
 
  .cat-products {
@@ -500,7 +506,7 @@ body {
 
 .form-image-reg {
     background-image: url('/media/ms4-register.jpeg');
-    background-position: bottom;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -508,7 +514,10 @@ body {
 .form-container {
    background: white;
    width: 50%;
-    
+}
+
+.inactive {
+    margin-top: 250px !important;
 }
 
 /* -------------------------------- Media Queries */

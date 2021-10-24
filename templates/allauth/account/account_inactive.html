@@ -5,7 +5,10 @@
 {% block head_title %}{% trans "Account Inactive" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Account Inactive" %}</h1>
+<h1 class="form-element mt-5 center inactive">{% trans "Account Inactive" %}</h1>
 
-<p>{% trans "This account is inactive." %}</p>
+<p class="form-element center">{% trans "This account is inactive." %}</p>
+<p class="center">
+  <a href="{% url 'products' %}" class="btn btn-links">Back to shop</a>
+</p>
 {% endblock %}
