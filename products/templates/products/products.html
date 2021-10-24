@@ -67,7 +67,7 @@
         </a>
         {% endif %}
         <div class="name-rating-container">
-        <p><a class="mb-0 product-name detail-link" href="{% url 'product_detail' product.id %}">{{ product.name }}</a></p>
+        <p><a class="mb-0 product-name detail-link" href="{% url 'product_detail' product.id %}"><strong>{{ product.name }}</strong></a></p>
         {% if product.category %}
         <p>
         <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted">

@@ -37,7 +37,7 @@
             {% endif %}
             
             <div class="center">
-                <p class="product-name-detail">{{ product.name }}</p>
+                <p class="product-name-detail"><strong>{{ product.name }}</strong></p>
                 {% if product.category %}
               <p>
               <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted">
