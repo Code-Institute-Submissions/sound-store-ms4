@@ -470,6 +470,40 @@ body {
     overflow-y: auto;
 }
 
+/* -------------------------------- Authentication forms */
+
+.allauth-header {
+    padding-top: 200px;
+}
+
+.form-element {
+    margin-bottom: 3.5rem;
+    font-family: 'Tenor Sans', serif;
+    color: #122c34;
+}
+
+.form-links {
+    color: #5e7a97 !important;
+    text-decoration: none;
+}
+
+.form-links:hover {
+    color: #122c34 !important;
+}
+
+.form-image {
+    background-image: url('/media/ms4-login.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-container {
+   background: white;
+   width: 50%;
+    
+}
+
 /* -------------------------------- Media Queries */
 
 @media (max-width: 320px) {
