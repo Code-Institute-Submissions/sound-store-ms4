@@ -206,7 +206,7 @@ body {
  }
 
  .btn-links {
-     border: 1px solid black;
+     border: 1px solid black !important;
  }
 
  .cat-products {
@@ -494,6 +494,13 @@ body {
 .form-image {
     background-image: url('/media/ms4-login.jpeg');
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-image-reg {
+    background-image: url('/media/ms4-register.jpeg');
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
 }

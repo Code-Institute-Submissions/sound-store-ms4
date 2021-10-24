@@ -71,3 +71,6 @@ I designed the site to be as simplistic as possible to use. I didn't want it to 
 
 ### Empty Shopping cart on empty cart.html page
 1. Shopping cart taken from https://www.dreamstime.com/ (https://thumbs.dreamstime.com/b/empty-shopping-cart-side-view-isolated-white-background-31773785.jpg)
+
+### Forms
+1. Piano shop image on login.html taken from https://www.sweetwater.com/ (https://media.sweetwater.com/about/press-releases/images/Piano_Store.jpg)
