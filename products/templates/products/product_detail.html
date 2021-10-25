@@ -90,8 +90,8 @@
                         </div>
                         {% if request.user.is_superuser %}
                           <div class="admin-btns">
-                              <a class="btn edit" href="">Edit</a>
-                              <a class="btn delete" href="">Delete</a>
+                              <a class="btn edit" href="{% url 'edit_product' product.id %}">Edit</a>
+                              <a class="btn delete" href="{% url 'delete_product' product.id %}">Delete</a>
                           </div>
                         </div>
                         {% endif %}
