@@ -73,7 +73,9 @@ def product_detail(request, product_id):
 
 
 def add_product(request):
-    """ Add a product to the store """
+    """ 
+    Add product to the database if admin
+    """
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -84,10 +86,27 @@ def add_product(request):
             messages.error(request, 'Please review form and try again')
     else:
         form = ProductForm()
-    form = ProductForm()
+    
     template = 'products/add_product.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_product(request, product_id):
+    """ 
+    Edit product in the database if admin
+    """
+    product = get_object_or_404(Product, pk=product_id)
+    form = ProductForm(instance=product)
+    messages.info(request, f'Currently editing {product.name}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'product': product,
     }
 
     return render(request, template, context)
