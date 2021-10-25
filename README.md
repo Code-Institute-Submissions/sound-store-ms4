@@ -16,6 +16,7 @@ The target audience for Sound Store is both anyone looking for musical instrumen
 10. To have access to a blog to get musical information not necessarily linked to the store.
 11. To be able to contact the store via a contact form.
 
+
 # Technologies Used:
 1. Html, Css, JavaScript and Python are the programming languages used.
 2. Django - A Python framework, was used to build the site.
@@ -30,6 +31,7 @@ The target audience for Sound Store is both anyone looking for musical instrumen
 11. SQlite3 - Database used during development.
 12. Github - Used to store my project.
 13. Coolors (https://coolors.co/) - To generate a colour pallette to choose from.
+
 
 # Design
 I designed the site to be as simplistic as possible to use. I didn't want it to be too visually cluttered.
@@ -47,10 +49,21 @@ I designed the site to be as simplistic as possible to use. I didn't want it to 
 11. White
 12. Gold
 
+
 ## Fonts Used
 1. Sonsie One - This font reminds me of some of the Fender guitars or Gibson guitars logos and therefore I thought it would be a good fit for the site.
 2. Roboto - Easy to read font used in the navbar links
 3. Tenor Sans - A nice font to render the product names font in.
+
+
+# Bugs Encountered
+### Webhooks bugs
+1. When attempting to send webhook test events, I was receiving a result of "Test webhook error:401". This was fixed by opening up the ports tab in Gitpod and making the 8000 port public.
+2. On another occasion while trying to send a test webhook, I was receiving a result of "Test webhook error:404". This was fixed by updating the region code, i.e. "...eu(number)..." in the gitpod workspace url. This number appeared to change somewhat regularly and so needed to be updated in the stripe endpoint url in the stripe dashboard. 
+3. Due to the superuser being created at the beginning of development before the profiles app was created, the profiles app did not recognise the superuser name and threw an error 404 screen in response to my attempting to login to admin. This was fixed by commenting out the 'if created:' statement in the profiles.models file... {show picture} ... , logging in with the superuser name and password, and then uncommenting the code. On both the commenting and uncommenting of the 'if' statement, the line inside was indented appropriately in order for the code to work.
+
+### Product Admin Bugs
+1. When Testing the add product form in add_product.html I successfully added numerous products to the database. I then deleted these products in the database. The result of this was that my site seemed to become totally unusable. When loading my site using 'python3 manage.py runserver' I was getting a 404 error saying that my home page was not found. I tried undoing all the work I had done leading to this error and redoing it but it did not work. Finally I found a post on Slack related to this and realised that the products deleted from my database were in my shopping cart and thus were cached in the entire project. As per the advice in that post I deleted the sessionid from developer tools and this fixed the error. 
 
 
 
