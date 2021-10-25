@@ -18,6 +18,8 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'User details updated')
+        else:
+            messages.error(request, 'The update failed, did you fill out the form correctly?')
     
     form = UserProfileForm(instance=profile)
     # User's order history
