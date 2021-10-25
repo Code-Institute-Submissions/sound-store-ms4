@@ -100,8 +100,17 @@ def edit_product(request, product_id):
     Edit product in the database if admin
     """
     product = get_object_or_404(Product, pk=product_id)
-    form = ProductForm(instance=product)
-    messages.info(request, f'Currently editing {product.name}')
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product edit was successful')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, 'Product not edited, please ensure form filled out correctly')
+    else:
+        form = ProductForm(instance=product)
+        messages.info(request, f'Currently editing {product.name}')
 
     template = 'products/edit_product.html'
     context = {
