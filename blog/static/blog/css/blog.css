@@ -1,3 +1,20 @@
 .blog-logo {
-    color: red;
+    font-family: 'Tenor Sans', serif;
+}
+
+.blog-title {
+    font-family: 'Roboto', serif;
+    font-size: 2rem;
+    text-align: left;
+    color: #2ec4bc;
+}
+
+.blog-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog-description {
+    color: #ff9f1c;
 }

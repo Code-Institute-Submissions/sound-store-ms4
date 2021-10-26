@@ -25,13 +25,30 @@
 
 <div class="container">
     {% for blog in blogs %}
-     <div class="row">
-         <div class="col-12">
+    <hr>
+    <div class="row">
+         <div class="col-4">
              <p>Posted By: <span class="text-muted">{{ blog.blog_author }}</span></p>
              <p>On: <span class="text-muted">{{ blog.blog_created }}</span></p>
+             {% if blog.blog_updated %}
+             <p class="pt-4">Updated: <span class="text-muted">{{ blog.blog_updated }}</span></p>
+             {% endif %}
          </div>
-     </div>
-         
+         <div class="col-8">
+             <h3 class="blog-title">{{ blog.blog_title }}</h3>
+             {% if blog.blog_image %}
+                <img src="{{ blog.blog_image_url }}" alt="{{ blog.blog_title }}" class="blog-image">
+             {% endif %}
+         </div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8 head-container">
+            <p class="blog-description "><strong><i>{{ blog.blog_heading }}</i></strong></p>
+        </div>
+    </div>
+</div>
+
     {% endfor %}
   </div>
 {% endblock %}
