@@ -1,5 +1,11 @@
 from django.shortcuts import render
+from .models import BlogPost
 
 
 def BlogPostPage(request):
-    return render(request, 'blog/blog.html')
+    blogs = BlogPost.objects.all()
+
+    context = {
+        'blogs': blogs,
+    }
+    return render(request, 'blog/blog.html', context)

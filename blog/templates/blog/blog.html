@@ -4,6 +4,10 @@
   | Blog
 {% endblock %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
 {% block page_header %}
   <div class="container header-container">
     <div class="row">
@@ -15,9 +19,19 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-  Hello
-         
+<div>
+    <h2 class="logo-font mt-5 mb-5 center blog-logo"><i>Blog</i></h2>
+</div>
 
+<div class="container">
+    {% for blog in blogs %}
+     <div class="row">
+         <div class="col-12">
+             <p>Posted By: <span class="text-muted">{{ blog.blog_author }}</span></p>
+             <p>On: <span class="text-muted">{{ blog.blog_created }}</span></p>
+         </div>
+     </div>
+         
+    {% endfor %}
   </div>
 {% endblock %}
