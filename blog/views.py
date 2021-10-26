@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from .models import BlogPost
 from .forms import BlogForm
@@ -15,6 +15,7 @@ def blog_post_page(request):
 
 
 def upload_blog(request):
+    """Upload a blog to the database"""
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES)
         if form.is_valid():
@@ -30,6 +31,22 @@ def upload_blog(request):
 
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_blog(request, blog_id):
+    """Edit a blog"""
+    blog = get_object_or_404(BlogPost, pk=blog_id)
+    form = BlogForm(instance=blog)
+    messages.info(request, f'Updating {blog.blog_title}')
+
+    template = 'blog/edit_blog.html'
+
+    context = {
+        'form': form,
+        'blog': blog,
     }
 
     return render(request, template, context)
