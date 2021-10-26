@@ -70,7 +70,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="category-head font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="category-head font-weight-bold nav-link text-black mr-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
@@ -78,6 +78,18 @@
                 <a href="{% url 'products' %}?category=hardware" class="dropdown-item">Hardware</a>
                 <a href="{% url 'products' %}?category=strings_straps" class="dropdown-item">Strings & Straps </a>
                 <a href="{% url 'products' %}?category=microphones,hardware,strings_straps" class="dropdown-item">All Accessories</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="category-head font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Blog
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                <a href="{% url 'blog_post_page' %}" class="dropdown-item">Blog</a>
+                {% if request.user.is_superuser %}
+                <a href="{% url 'upload_blog' %}" class="dropdown-item">Upload Blog</a>
+                {% endif %}
             </div>
         </li>
     </ul>

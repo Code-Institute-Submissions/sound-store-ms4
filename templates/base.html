@@ -76,6 +76,7 @@
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                   <a href="{% url 'add_product' %}" class="dropdown-item dark-color">Product Management</a>
+                  <a href="{% url 'upload_blog' %}" class="dropdown-item dark-color blog-link">Upload Blog</a>
                 {% endif %}
                   <a href="{% url 'profile' %}" class="dropdown-item dark-color">My Profile</a>
                   <a href="{% url 'account_logout' %}" class="dropdown-item dark-color">Logout</a>
