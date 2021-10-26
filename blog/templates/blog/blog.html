@@ -32,12 +32,13 @@
              <p>Posted By: <span class="text-muted">{{ blog.blog_author }}</span></p>
              <p>On: <span class="text-muted">{{ blog.blog_created }}</span></p>
              <p class="pt-4">Updated: <span class="text-muted">{{ blog.blog_updated }}</span></p>
-             
          </div>
          <div class="col-8">
              <h3 class="blog-title">{{ blog.blog_title }}</h3>
              {% if blog.blog_image %}
                 <img src="{{ blog.blog_image_url }}" alt="{{ blog.blog_title }}" class="blog-image">
+            {% else %}
+                <img src="{{ MEDIA_URL }}no-blog-image.jpeg" alt="{{ blog.blog_title }}" class="blog-image">
              {% endif %}
          </div>
     </div>

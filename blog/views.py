@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import BlogPost
 
 
-def BlogPostPage(request):
+def blog_post_page(request):
     blogs = BlogPost.objects.all()
 
     context = {

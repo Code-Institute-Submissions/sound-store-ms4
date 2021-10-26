@@ -69,6 +69,9 @@ The site relies heavily on images. The home page uses a carousel of three images
 ### Product Admin Bugs
 1. When Testing the admin-only add product form in add_product.html, I successfully added numerous products to the store. I then deleted these products in the admin database. The result of this was that my site become totally unusable. When loading my site using 'python3 manage.py runserver' I was getting a 404 error saying that my home page was not found. I tried undoing all the work I had done leading to this error and redoing it but it did not fix the issue. Finally I found a post on Slack related to this and realised that the products deleted from my database were in my shopping cart at the time and thus were cached in the entire project. I deleted the sessionid from developer tools and this fixed the error. 
 
+### Blog
+1. When trying to link to the blog in the base.html page, I was repeatedly getting an error. After trying a few things I changed the name of the blog view from 'BlogPostPage' to 'blog_post_page' and this fixed the issue.
+
 
 
 # Credits
