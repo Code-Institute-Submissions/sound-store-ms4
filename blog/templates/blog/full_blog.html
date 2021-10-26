@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_title %}
-  | Blog
+  | {{ blogs.blog_title }} blog
 {% endblock %}
 
 {% block extra_css %}
@@ -20,10 +20,47 @@
 
 {% block content %}
 <div>
-    <h2 class="logo-font mt-5 mb-5 center blog-logo"><i>Blog</i></h2>
+    <h2 class="logo-font mt-5 mb-5 center blog-logo roboto"><i>{{ blogs.blog_title }}</i></h2>
 </div>
 
-<p>{{ blogs.blog_heading }}</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12 center">
+            <span class="dark-blue"><strong>Posted By: </strong><span class="text-muted">{{ blogs.blog_author }}  |  </span></span>
+             <span class="dark-blue"><strong>On: </strong><span class="text-muted">{{ blogs.blog_created }}  |  </span></span>
+             <span class="dark-blue"><strong>Updated: </strong><span class="text-muted">{{ blogs.blog_updated }}</span></span>
+        </div>
+    </div>
+
+    {% if request.user.is_superuser %}
+    <div class="row">
+        <div class="col-12 center mt-2 mb-2">
+            <a class="edit btn mr-5" href="{% url 'edit_blog' blogs.id %}">Edit</a>
+            <a class="delete btn" href="{% url 'delete_blog' blogs.id %}">Delete</a>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-12 center">
+            {% if blogs.blog_image %}
+                <img src="{{ blogs.blog_image_url }}" alt="{{ blogs.blog_title }}" class="blog-image-full">
+            {% else %}
+                <img src="{{ MEDIA_URL }}no-blog-image.jpeg" alt="{{ blogs.blog_title }}" class="blog-image-full">
+             {% endif %}
+        </div>
+        <div class="col-12">
+            <p class="blog-description-full center"><i><strong>{{ blogs.blog_heading }}</strong></i></p>
+        </div>
+        <div class="col-12">
+            <p>{{ blogs.blog_main }}</p>
+        </div>
+        <div class="col-12">
+            <p class="center">
+                <a href="{% url 'blog_post_page' %}" class="btn btn-links mt-3">Back to Blog</a>
+              </p>
+        </div>
+    </div>
+</div>
 
 
 

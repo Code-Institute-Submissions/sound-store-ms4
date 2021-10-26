@@ -1,3 +1,5 @@
+/* ----------------------------- blog.html*/
+
 .blog-logo {
     font-family: 'Tenor Sans', serif;
 }
@@ -17,4 +19,30 @@
 
 .blog-description {
     color: #ff9f1c;
+}
+
+.dark-blue {
+    color:#011627;
+}
+
+.center {
+    text-align: center;
+}
+
+.roboto {
+    font-family: 'Tenor Sans', serif;
+}
+
+/* ----------------------------- full_blog.html*/
+
+.blog-image-full {
+    height: 330px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog-description-full {
+    color: #ff9f1c;
+    font-size: 1.25rem;
+    font-family: 'Tenor Sans', serif;
 }
