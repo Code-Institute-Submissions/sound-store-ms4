@@ -23,16 +23,16 @@
     <h2 class="logo-font mt-5 mb-5 center blog-logo"><i>Blog</i></h2>
 </div>
 
+{% for blog in blogs %}
 <div class="container">
-    {% for blog in blogs %}
     <hr>
     <div class="row">
+        
          <div class="col-4">
              <p>Posted By: <span class="text-muted">{{ blog.blog_author }}</span></p>
              <p>On: <span class="text-muted">{{ blog.blog_created }}</span></p>
-             {% if blog.blog_updated %}
              <p class="pt-4">Updated: <span class="text-muted">{{ blog.blog_updated }}</span></p>
-             {% endif %}
+             
          </div>
          <div class="col-8">
              <h3 class="blog-title">{{ blog.blog_title }}</h3>
@@ -41,14 +41,20 @@
              {% endif %}
          </div>
     </div>
+
     <div class="row">
         <div class="col-4"></div>
         <div class="col-8 head-container">
             <p class="blog-description "><strong><i>{{ blog.blog_heading }}</i></strong></p>
         </div>
     </div>
-</div>
-
-    {% endfor %}
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <p>{{ blog.blog_main }}</p>
+        </div>
+    </div>
   </div>
+</div>
+{% endfor %}
 {% endblock %}
