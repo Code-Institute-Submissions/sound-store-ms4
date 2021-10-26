@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}
+  | Blog
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
+{% block page_header %}
+  <div class="container header-container">
+    <div class="row">
+      <div class="col">
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div>
+    <h2 class="logo-font mt-5 mb-5 center blog-logo"><i>Blog</i></h2>
+</div>
+
+<p>{{ blogs.blog_heading }}</p>
+
+
+
+{% endblock %}
