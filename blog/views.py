@@ -60,3 +60,10 @@ def edit_blog(request, blog_id):
     }
 
     return render(request, template, context)
+
+
+def delete_blog(request, blog_id):
+    blog = get_object_or_404(BlogPost, pk=blog_id)
+    blog.delete()
+    messages.success(request, 'Blog has been deleted')
+    return redirect(reverse('blog_post_page'))
