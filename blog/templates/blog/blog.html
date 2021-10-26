@@ -31,7 +31,13 @@
          <div class="col-4">
              <p>Posted By: <span class="text-muted">{{ blog.blog_author }}</span></p>
              <p>On: <span class="text-muted">{{ blog.blog_created }}</span></p>
-             <p class="pt-4">Updated: <span class="text-muted">{{ blog.blog_updated }}</span></p>
+             <p>Updated: <span class="text-muted">{{ blog.blog_updated }}</span></p>
+             {% if request.user.is_superuser %}
+             <div>
+              <a class="edit btn mr-5" href="{% url 'edit_blog' blog.id %}">Edit</a>
+              <a class="delete btn" href="{% url 'delete_blog' blog.id %}">Delete</a>
+            </div>
+             {% endif %}
          </div>
          <div class="col-8">
              <h3 class="blog-title">{{ blog.blog_title }}</h3>
