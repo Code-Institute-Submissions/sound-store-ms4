@@ -39,8 +39,18 @@ def upload_blog(request):
 def edit_blog(request, blog_id):
     """Edit a blog"""
     blog = get_object_or_404(BlogPost, pk=blog_id)
-    form = BlogForm(instance=blog)
-    messages.info(request, f'Updating {blog.blog_title}')
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES, instance=blog)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Blog updated.')
+            return redirect(reverse('blog_post_page'))
+        else:
+            messages.error(request, 'Blog was not edited. Pease ensure \
+                you have filled the form out correctly')
+    else:
+        form = BlogForm(instance=blog)
+        messages.info(request, f'Updating {blog.blog_title}')
 
     template = 'blog/edit_blog.html'
 
