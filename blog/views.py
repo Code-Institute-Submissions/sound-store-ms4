@@ -3,14 +3,19 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import BlogPost, BlogComments
 from .forms import BlogForm, BlogCommentForm
+from django.core.paginator import Paginator
 
 
 def blog_post_page(request):
     """Render the blog in the browser"""
     blogs = BlogPost.objects.all()
-
+    # Pagination
+    p = Paginator(blogs, 3)
+    pages = request.GET.get('page')
+    blog_list = p.get_page(pages)
     context = {
         'blogs': blogs,
+        'blog_list': blog_list,
     }
     return render(request, 'blog/blog.html', context)
 
