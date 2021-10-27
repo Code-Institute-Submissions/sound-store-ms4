@@ -46,3 +46,13 @@
     font-size: 1.25rem;
     font-family: 'Tenor Sans', serif;
 }
+
+.confirm {
+    background-color: #e71d36;
+    color: #011627;
+}
+
+.cancel {
+    background-color: #2EC4B6;
+    color: #011627;
+}

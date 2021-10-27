@@ -77,10 +77,10 @@ def delete_blog(request, blog_id):
         messages.error(request, 'Only admin can delete a blog.')
         return redirect(reverse('blog_post_page'))
     blog = get_object_or_404(BlogPost, pk=blog_id)
+    
     blog.delete()
     messages.success(request, 'Blog has been deleted')
     return redirect(reverse('blog_post_page'))
-
 
 def full_post(request, blog_id):
     blogs = get_object_or_404(BlogPost, pk=blog_id)

@@ -20,7 +20,7 @@
 
 {% block content %}
 <div>
-    <h2 class="logo-font mt-5 mb-5 center blog-logo roboto"><i>{{ blogs.blog_title }}</i></h2>
+    <h2 class="logo-font mt-5 mb-5 center blog-logo roboto blog-title"><i>{{ blogs.blog_title }}</i></h2>
 </div>
 
 <div class="container">
@@ -34,9 +34,13 @@
 
     {% if request.user.is_superuser %}
     <div class="row">
-        <div class="col-12 center mt-2 mb-2">
+        <div class="col-12 center mt-2 mb-2" id="options">
             <a class="edit btn mr-5" href="{% url 'edit_blog' blogs.id %}">Edit</a>
-            <a class="delete btn" href="{% url 'delete_blog' blogs.id %}">Delete</a>
+            <a class="delete btn" href="#">Delete</a>
+        </div>
+        <div class="col-12 center mt-2 mb-2" id="show">
+            <a class="cancel btn mr-5" href="{% url 'full_post' blogs.id %}">Cancel</a>
+            <a class="confirm btn" href="{% url 'delete_blog' blogs.id %}">Confirm Delete</a>
         </div>
     </div>
     {% endif %}
@@ -86,4 +90,8 @@
 
 
 
+{% endblock %}
+
+{% block postloadjs %}
+    <script src="{% static 'blog/js/blog.js' %}"></script>
 {% endblock %}
