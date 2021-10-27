@@ -60,3 +60,22 @@
 </div>
 {% endfor %}
 {% endblock %}
+
+{% block postloadjs %}
+    <script src="{% static 'blog/js/blog.js' %}"></script>
+{% endblock %}
+
+
+
+
+
+<!--
+
+
+
+
+  <div>
+              <a class="edit btn mr-5" href="{% url 'edit_blog' blog.id %}">Edit</a>
+              <a class="delete btn" href="#">Delete</a>
+            </div>
+-->
