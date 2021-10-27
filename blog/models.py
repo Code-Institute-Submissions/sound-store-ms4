@@ -18,3 +18,17 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.blog_title
+
+
+class BlogComments(models.Model):
+    
+    class Meta:
+        verbose_name_plural = 'Blog Comments'
+
+    blog_comment = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name="blog_post")
+    author_comment = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False, related_name="author_comment")
+    uploaded_comment = models.DateTimeField(auto_now_add=True)
+    main_comment = models.TextField()
+
+    def __str__(self):
+        return self.author_comment

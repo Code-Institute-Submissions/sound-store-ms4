@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BlogPost
+from .models import BlogPost, BlogComments
 
 
 class BlogPostAdmin(admin.ModelAdmin):
@@ -18,3 +18,14 @@ class BlogPostAdmin(admin.ModelAdmin):
 
 
 admin.site.register(BlogPost, BlogPostAdmin)
+
+
+class BlogCommentsAdmin(admin.ModelAdmin):
+    list_display = (
+        'uploaded_comment',
+        'author_comment',
+    )
+
+    ordering = ['-uploaded_comment']
+
+admin.site.register(BlogComments, BlogCommentsAdmin)
