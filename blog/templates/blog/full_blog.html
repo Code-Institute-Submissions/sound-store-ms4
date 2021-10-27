@@ -59,13 +59,22 @@
 
         <!--Blog Comments-->
        <div class="mt-5">
-            <form method='POST' action="">
             {% if user.is_authenticated %}
+            <form method='POST' action="{% url 'full_post' blogs.id %}">
             <h3>Leave a Comment!</h3>
             {% csrf_token %}
             {{ form | crispy }}
+            <div class="text-right">
+                <a class="btn btn-links" href="{% url 'blog_post_page' %}">Cancel Upload</a>
+                <button type="submit" class="btn btn-links">Upload</button>
+            </div>
             {% endif %}
             </form>
+        </div>
+        <div class="col-12">
+            {% for post in blog_comment.all %}
+              <p>{{ main_comment }}</p>
+            {% endfor %}
         </div>
         <div class="col-12">
             <p class="center">

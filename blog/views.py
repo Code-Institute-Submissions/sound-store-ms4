@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import BlogPost
+from .models import BlogPost, BlogComments
 from .forms import BlogForm, BlogCommentForm
 
 
@@ -84,7 +84,22 @@ def delete_blog(request, blog_id):
 
 def full_post(request, blog_id):
     blogs = get_object_or_404(BlogPost, pk=blog_id)
-    form = BlogCommentForm
+
+    if request.method == 'POST':
+        form = BlogCommentForm(request.POST)
+        if form.is_valid():
+            comments = form.save(commit=False)
+            comments.blog_comment = blogs
+            comments.save()
+
+            messages.success(request, 'Comment Added!')
+            
+        else:
+            messages.error(request, 'Comment not added. Please ensure all \
+                fields are filled out correctly')
+    else:
+        form = BlogCommentForm()
+
 
     context = {
         'blogs': blogs,
@@ -92,6 +107,3 @@ def full_post(request, blog_id):
     }
 
     return render(request, 'blog/full_blog.html', context)
-
-
-
