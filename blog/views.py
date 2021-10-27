@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import BlogPost
-from .forms import BlogForm
+from .forms import BlogForm, BlogCommentForm
 
 
 def blog_post_page(request):
@@ -84,9 +84,14 @@ def delete_blog(request, blog_id):
 
 def full_post(request, blog_id):
     blogs = get_object_or_404(BlogPost, pk=blog_id)
+    form = BlogCommentForm
 
     context = {
         'blogs': blogs,
+        'form': form,
     }
 
     return render(request, 'blog/full_blog.html', context)
+
+
+

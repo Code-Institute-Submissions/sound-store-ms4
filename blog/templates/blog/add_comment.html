@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}
+  | Add blod comment
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
+{% block page_header %}
+  <div class="container header-container">
+    <div class="row">
+      <div class="col">
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div>
+    <h2 class="logo-font mt-5 mb-5 center blog-logo"><i>Edit Blog</i></h2>
+</div>
+<div class="form-container">
+    <div class="row">
+      <div class="col-12">
+        <form method="POST" action="{% url 'edit_blog' blog.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <div class="text-right">
+          <a class="btn btn-links" href="{% url 'home' %}">Cancel Edit</a>
+          <button type="submit" class="btn btn-links">Edit Blog</button>
+        </div>
+        </form>
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}

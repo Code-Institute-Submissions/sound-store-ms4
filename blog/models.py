@@ -21,7 +21,7 @@ class BlogPost(models.Model):
 
 
 class BlogComments(models.Model):
-    
+
     class Meta:
         verbose_name_plural = 'Blog Comments'
 

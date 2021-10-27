@@ -54,6 +54,19 @@
         <div class="col-12">
             <p>{{ blogs.blog_main }}</p>
         </div>
+
+
+
+        <!--Blog Comments-->
+       <div class="mt-5">
+            <form method='POST' action="">
+            {% if user.is_authenticated %}
+            <h3>Leave a Comment!</h3>
+            {% csrf_token %}
+            {{ form | crispy }}
+            {% endif %}
+            </form>
+        </div>
         <div class="col-12">
             <p class="center">
                 <a href="{% url 'blog_post_page' %}" class="btn btn-links mt-3">Back to Blog</a>

@@ -411,3 +411,20 @@ def checkout_success(request, order_number):
 
     return render(request, template, context)
 
+
+
+
+
+
+
+if request.method == 'POST':
+        form = BlogCommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Comment added!')
+            return redirect(reverse('home'))
+        else:
+            messages.error(request, 'Comment not added, please ensure you \
+                have filled out the form correctly!')
+    else:
+        form = BlogCommentForm()
