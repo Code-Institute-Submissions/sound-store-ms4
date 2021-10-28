@@ -39,3 +39,15 @@ def messages_list(request):
         'message': message,
     }
     return render(request, template, context)
+
+
+def delete_message(request, contact_id):
+    """Delete a message if superuser"""
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    contact = get_object_or_404(Contact, pk=contact_id)
+    contact.delete()
+    messages.success(request, 'Message deleted')
+    return redirect(reverse('messages_list'))
+
