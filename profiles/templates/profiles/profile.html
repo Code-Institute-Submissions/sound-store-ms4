@@ -24,7 +24,7 @@
     <div class="row">
         <div class="col text-center mt-3">
             <hr>
-            <h2 class="logo-font mt-5 mb-5 center"><i>My Contact Details</i></h2>
+            <h2 class="logo-font mt-5 mb-5 center headings"><i>My Contact Details</i></h2>
         </div>
     </div>
 </div>
@@ -34,17 +34,17 @@
     <form action="{% url 'profile' %}" class="mt-4 ml-4" method="POST" id="profile-update-form">
       {% csrf_token %}
       {{ form|crispy }}
-      <button class="float-right">Update Information</button>
+      <button class="float-right btn btn-links btn-mob">Update Information</button>
     </form>
   </div>
   <div class="col-12 col-lg-6">
-    <p class="text-muted"><i>Order History</i></p>
+    <p class="text-muted history-mob"><i>Order History</i></p>
     <div class="order-history table-responsive">
       <table class="table table-sm table-borderless">
           <thead>
               <tr>
                   <th>Order Number</th>
-                  <th>Date</th>
+                  <th class="date-mob">Date</th>
                   <th>Items</th>
                   <th>Order Total</th>
               </tr>
@@ -58,7 +58,7 @@
                               {{ order.order_number|truncatechars:6 }}
                           </a>
                       </td>
-                      <td>{{ order.date }}</td>
+                      <td class="date-mob">{{ order.date }}</td>
                       <td>
                           <ul class="list-unstyled">
                               {% for item in order.lineitems.all %}

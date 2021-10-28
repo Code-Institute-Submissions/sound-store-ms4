@@ -20,15 +20,14 @@
 
 {% block content %}
 <div>
-    <h2 class="logo-font mt-5 mb-5 center blog-logo"><i>Blog</i></h2>
+    <h2 class="logo-font mt-5 mb-5 center blog-logo headings"><i>Blog</i></h2>
 </div>
 
 {% for blog in blog_list %} <!--for blog in blogs-->
 <div class="container">
     <hr>
     <div class="row">
-        
-         <div class="col-4">
+        <div class="col-4">
              <p>Posted: <span class="text-muted">{{ blog.blog_created | timesince}} ago</span></p>
              <p>Posted By: <span class="text-muted">{{ blog.blog_author }}</span></p>
              <p>On: <span class="text-muted">{{ blog.blog_created }}</span></p>
@@ -75,7 +74,6 @@
   <a class="pagination-links" href="?page={{ blog_list.paginator.num_pages }}">Last &raquo</a>
 {% endif %}
 </div>
-
 {% endblock %}
 
 

@@ -366,6 +366,10 @@ body {
 
 /* -------------------------------- Product Management (admin_add.html, admin_edit.html) */
 
+.headings{
+    font-family: 'Tenor Sans', serif;
+}
+
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -627,6 +631,10 @@ body {
 
 
   @media (max-width: 768px) {
+    .date-mob {
+        display: none;
+    }
+    
     .hero-mob {
         object-fit: cover;
         height: 350px;
@@ -672,6 +680,22 @@ body {
 .mob-container {
     margin-top: 3rem;
   }
+
+  .headings {
+      padding-top: 1.5rem;
+  }
+
+  .contact-container {
+      width: 100%;
+  }
+
+  .history-mob {
+      margin-top: 2rem;
+  }
+
+  .edit-form {
+    width: 100%;
+}
 }
 
   @media (min-width: 994px) {
