@@ -34,6 +34,7 @@
     <h4><span class="detail">SENDER: </span>{{ m.contact_name }}</h4>
     <h5><span class="detail">EMAIL: </span>{{ m.contact_email }}</h5>
     <p>{{ m.contact_body }}</p>
+    <a class="btn btn-links" href="{% url 'delete_message' m.id %}">Delete</a>
     </div>
     {% endfor %}
     
