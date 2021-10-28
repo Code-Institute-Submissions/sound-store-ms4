@@ -29,7 +29,12 @@
         </div>
     </div>
     {% for m in message %}
-    <p>{{ m.contact_name }}</p>
+    <div class="messages-container mt-5 p-2">
+    <p class="text-muted">{{ m.contact_sent }}</p>
+    <h4><span class="detail">SENDER: </span>{{ m.contact_name }}</h4>
+    <h5><span class="detail">EMAIL: </span>{{ m.contact_email }}</h5>
+    <p>{{ m.contact_body }}</p>
+    </div>
     {% endfor %}
     
     
