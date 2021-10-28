@@ -10,7 +10,7 @@ class BlogForm(forms.ModelForm):
 
 
 class BlogCommentForm(forms.ModelForm):
-    
+
     class Meta:
         model = BlogComments
         fields = [

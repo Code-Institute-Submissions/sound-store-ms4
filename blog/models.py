@@ -26,7 +26,7 @@ class BlogComments(models.Model):
         verbose_name_plural = 'Blog Comments'
 
     blog_comment = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name="blog_post")
-    author_comment = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False, related_name="author_comment")
+    author_comment = models.CharField(max_length=50, null=False, blank=False)
     uploaded_comment = models.DateTimeField(auto_now_add=True)
     main_comment = models.TextField()
 

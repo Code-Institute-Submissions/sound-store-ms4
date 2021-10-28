@@ -74,6 +74,7 @@ def edit_blog(request, blog_id):
     }
 
     return render(request, template, context)
+    
 
 @login_required
 def delete_blog(request, blog_id):
@@ -82,33 +83,17 @@ def delete_blog(request, blog_id):
         messages.error(request, 'Only admin can delete a blog.')
         return redirect(reverse('blog_post_page'))
     blog = get_object_or_404(BlogPost, pk=blog_id)
-    
+
     blog.delete()
     messages.success(request, 'Blog has been deleted')
     return redirect(reverse('blog_post_page'))
 
+
 def full_post(request, blog_id):
     blogs = get_object_or_404(BlogPost, pk=blog_id)
-
-    if request.method == 'POST':
-        form = BlogCommentForm(request.POST)
-        if form.is_valid():
-            comments = form.save(commit=False)
-            comments.blog_comment = blogs
-            comments.save()
-
-            messages.success(request, 'Comment Added!')
-            
-        else:
-            messages.error(request, 'Comment not added. Please ensure all \
-                fields are filled out correctly')
-    else:
-        form = BlogCommentForm()
-
-
+    
     context = {
         'blogs': blogs,
-        'form': form,
     }
-
+    
     return render(request, 'blog/full_blog.html', context)
