@@ -626,8 +626,7 @@ body {
     } 
 
 
-
-  @media (max-width: 764px) {
+  @media (max-width: 768px) {
     .hero-mob {
         object-fit: cover;
         height: 350px;
@@ -640,9 +639,7 @@ body {
     .category-container {
         text-align: center;
     }
-  }
 
-  @media (max-width: 768px) {
   .category-images {
     width: 90px;
     height: 90px;
@@ -658,8 +655,24 @@ body {
       text-align: center;
   }
 
+  .product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
 }
 
+  .price {
+      text-align: center !important;
+      padding-top: 1rem; 
+  }
+}
+
+@media (max-width: 990px) {
+.mob-container {
+    margin-top: 3rem;
+  }
+}
 
   @media (min-width: 994px) {
     .category-container {
