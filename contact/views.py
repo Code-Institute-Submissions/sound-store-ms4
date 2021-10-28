@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from .forms import ContactForm
+from .models import Contact
 
 
 def contact(request):
@@ -23,3 +24,18 @@ def contact(request):
     }
     
     return render(request, 'contact/contact.html', context)
+
+
+def messages_list(request):
+    """Adin only page for showing contact messages"""
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    template = 'contact/message-list.html'
+
+    message = Contact.objects.all()
+
+    context = {
+        'message': message,
+    }
+    return render(request, template, context)

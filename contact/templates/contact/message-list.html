@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}
+  | Contact Form
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
+{% endblock %}
+
+
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col">
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center mt-3">
+            <h2 class="logo-font mt-5 mb-5 center"><i>Your Messages</i></h2>
+            <p class="text-muted">Here are your messages from customers</p>
+        </div>
+    </div>
+    {% for m in message %}
+    <p>{{ m.contact_name }}</p>
+    {% endfor %}
+    
+    
+</div>
+
+{% endblock %}
+

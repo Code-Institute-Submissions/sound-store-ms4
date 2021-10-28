@@ -5,7 +5,7 @@ from .models import BlogPost, BlogComments
 from .forms import BlogForm, BlogCommentForm
 from django.core.paginator import Paginator
 
-
+@login_required
 def blog_post_page(request):
     """Render the blog in the browser"""
     blogs = BlogPost.objects.all()

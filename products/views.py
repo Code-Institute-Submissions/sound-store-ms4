@@ -6,10 +6,14 @@ from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
 
+# Pagination
+from django.core.paginator import Paginator
+
 
 def all_products(request):
     """Shows all products + search functionality + sorting"""
     products = Product.objects.all()
+
     query = None
     categories = None
     sort = None
