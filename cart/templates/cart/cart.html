@@ -21,28 +21,28 @@
     <div class="row">
         <div class="col text-center mt-3">
             <hr>
-            <h2 class="logo-font mt-5 pt-2 mb-5 center"><i>Shopping Cart</i></h2>
+            <h2 class="logo-font mt-5 pt-2 mb-5 center headings"><i>Shopping Cart</i></h2>
         </div>
     </div>
 
     <div class="row">
         <div class="col">
             {% if bag_items %}
-            <div class="table-responsive rounded">
+            <div class="table-responsive rounded mob-cart">
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
                         <tr>
-                            <th scope="col">Cart Items</th>
+                            <th scope="col">Items</th>
                             <th scope="col"></th>
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
                             <th scope="col">Subtotal</th>
                         </tr>
                     </thead>
-
+                    
                     {% for item in bag_items %}
-                        <tr>
-                            <td class="p-3 w-25">
+                        <tr >
+                            <td class="p-3 w-25 cart-name-mob">
                                 {% if item.product.image %}
                                 <img class="img-fluid rounded cart-images" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                 {% else %}
@@ -50,7 +50,7 @@
                                 {% endif %}
                             </td>
                             <td class="py-3">
-                                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                <p class="my-0 "><strong>{{ item.product.name }}</strong></p>
                             </td>
                             <td class="py-3">
                                 <p class="my-0">${{ item.product.price }}</p>
@@ -93,11 +93,11 @@
                     {% endfor %}
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
-                            <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
-                            <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
-                            <h4 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
+                            <h6 class="sm-mob-size"><strong>Cart Total: €{{ total|floatformat:2 }}</strong></h6>
+                            <h6 class="sm-mob-size">Delivery: €{{ delivery|floatformat:2 }}</h6>
+                            <h4 class="mt-4 sm-mob-size"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
                             {% if free_delivery_delta > 0 %}
-                                <p class="mb-1 text-danger">
+                                <p class="mb-1 sm-mob-size">
                                     Spend just <strong>€{{ free_delivery_delta }}</strong> more for free delivery!
                                 </p>
                             {% endif %}
@@ -107,10 +107,10 @@
                         <td colspan="5" class="text-right">
                             <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
                                 
-                                <span class="text-uppercase btn btn-links">Back to shop</span>
+                                <span class="text-uppercase btn btn-links sm-mob-size">Back to shop</span>
                             </a>
                             <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                <span class="text-uppercase btn btn-links">Secure Checkout
+                                <span class="text-uppercase btn btn-links sm-mob-size">Secure Checkout
                                     <span class="icon">
                                         <i class="fas fa-lock"></i>
                                     </span>

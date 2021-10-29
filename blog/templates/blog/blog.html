@@ -34,13 +34,13 @@
              <p>Updated: <span class="text-muted">{{ blog.blog_updated }}</span></p>
              {% if request.user.is_superuser %}
              <div>
-              <a class="edit btn mr-5" href="{% url 'edit_blog' blog.id %}">Edit</a>
-              <a class="delete btn" href="{% url 'delete_blog' blog.id %}">Delete</a>
+              <a class="edit btn mr-5 mob-admin-btn" href="{% url 'edit_blog' blog.id %}">Edit</a>
+              <a class="delete btn mob-admin-btn" href="{% url 'delete_blog' blog.id %}">Delete</a>
             </div>
              {% endif %}
          </div>
          <div class="col-xs-12 col-sm-8">
-             <h3 class="blog-title">{{ blog.blog_title }}</h3>
+             <h4 class="blog-title" id="mob-blog-title">{{ blog.blog_title }}</h4>
              {% if blog.blog_image %}
                 <img src="{{ blog.blog_image_url }}" alt="{{ blog.blog_title }}" class="blog-image">
             {% else %}
