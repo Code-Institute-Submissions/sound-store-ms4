@@ -637,6 +637,20 @@ body {
   } 
 
   @media (max-width: 600px) {
+    .form-image {
+        background-image: none;
+        
+    }
+ 
+    .form-container {
+        width: 100%;
+    }
+    
+    .form-image-reg {
+        background-image: none;
+        
+    }
+
     .cart-name-mob {
         display: none;
     }
