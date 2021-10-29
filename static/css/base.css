@@ -512,14 +512,14 @@ body {
 }
 
 .form-image {
-    background-image: url('/media/ms4-login.jpeg');
+    background-image: url('{{ MEDIA_URL }}ms4-login.jpeg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .form-image-reg {
-    background-image: url('/media/ms4-register.jpeg');
+    background-image: url('{{ MEDIA_URL }}ms4-register.jpeg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -668,6 +668,10 @@ body {
 
       .price {
         font-size: 1rem;
+      }
+
+      .hero-mob {
+          padding-top: 100px;
       }
     } 
 
