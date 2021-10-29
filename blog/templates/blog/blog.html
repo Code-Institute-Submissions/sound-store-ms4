@@ -24,10 +24,10 @@
 </div>
 
 {% for blog in blog_list %} <!--for blog in blogs-->
+<hr>
 <div class="container">
-    <hr>
     <div class="row">
-        <div class="col-4">
+        <div class="col-xs-12 col-sm-4">
              <p>Posted: <span class="text-muted">{{ blog.blog_created | timesince}} ago</span></p>
              <p>Posted By: <span class="text-muted">{{ blog.blog_author }}</span></p>
              <p>On: <span class="text-muted">{{ blog.blog_created }}</span></p>
@@ -39,7 +39,7 @@
             </div>
              {% endif %}
          </div>
-         <div class="col-8">
+         <div class="col-xs-12 col-sm-8">
              <h3 class="blog-title">{{ blog.blog_title }}</h3>
              {% if blog.blog_image %}
                 <img src="{{ blog.blog_image_url }}" alt="{{ blog.blog_title }}" class="blog-image">
@@ -50,8 +50,8 @@
     </div>
 
     <div class="row">
-        <div class="col-4"></div>
-        <div class="col-8 head-container">
+        <div class="col-xs-12 col-sm-4"></div>
+        <div class="col-xs-12 col-sm-8 head-container">
             <p class="blog-description "><strong><i>{{ blog.blog_heading }}</i></strong></p>
             <a href="{% url 'full_post' blog.id %}" class="btn btn-links">See full Post</a>
         </div>
@@ -70,13 +70,8 @@
 <span class="ml-2 mr-2">Page {{ blog_list.number }} of {{ blog_list.paginator.num_pages }}</span>
 
 {% if blog_list.has_next %}
-  <a class="pagination-links-alt mr-2" href="?page={{ blog_list.next_page_number }}">Next Page</a>
+  <a class="pagination-links-alt mr-2" href="?page={{ blog_list.next_page_number }}">Next</a>
   <a class="pagination-links" href="?page={{ blog_list.paginator.num_pages }}">Last &raquo</a>
 {% endif %}
 </div>
-{% endblock %}
-
-
-{% block postloadjs %}
-    <script src="{% static 'blog/js/blog.js' %}"></script>
 {% endblock %}
