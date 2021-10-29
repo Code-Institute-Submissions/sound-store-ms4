@@ -3,11 +3,12 @@
 {% load i18n %}
 {% load account %}
 
+
 {% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
 
 
 {% block content %}
-<div class="inactive mt-5 pt-5">
+<div class="form-element center margin-top mt-5 pt-5 center">
 <h1 class="center form-element pt-5 inactive">{% trans "Confirm E-mail Address" %}</h1>
 
 {% if confirmation %}
@@ -18,7 +19,7 @@
 
 <form method="post" class="form-element" action="{% url 'account_confirm_email' confirmation.key %}">
 {% csrf_token %}
-    <button type="submit">{% trans 'Confirm' %}</button>
+    <button class="btn btn-links" type="submit">{% trans 'Confirm' %}</button>
 </form>
 
 {% else %}
@@ -26,7 +27,7 @@
 {% url 'account_email' as email_url %}
 
 <p>{% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new e-mail confirmation request</a>.{% endblocktrans %}</p>
-</div>
-{% endif %}
 
+{% endif %}
+</div>
 {% endblock %}

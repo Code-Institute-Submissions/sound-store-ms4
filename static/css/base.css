@@ -366,7 +366,7 @@ body {
 
 /* -------------------------------- Product Management (admin_add.html, admin_edit.html) */
 
-.headings{
+.headings {
     font-family: 'Tenor Sans', serif;
 }
 
@@ -488,6 +488,9 @@ body {
 }
 
 /* -------------------------------- Authentication forms */
+.margin-top {
+    padding-top: 250px;
+}
 
 .allauth-header {
     padding-top: 200px;
