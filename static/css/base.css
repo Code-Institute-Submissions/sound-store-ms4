@@ -566,7 +566,7 @@ body {
 /* -------------------------------- Erro Handling */
 
 .error-container {
-    padding-top: 250px;
+    padding-top: 150px;
 }
 
 /* -------------------------------- Media Queries */
@@ -800,7 +800,7 @@ body {
   /* -------------------------------- Colors */
 
   .orange {
-      color: #ff9f1c;
+      color: #ff9f1c !important;
   }
 
   .dark-blue {
@@ -808,5 +808,9 @@ body {
   }
 
   .red {
-      color: #e71d36;
+      color: #e71d36 !important;
+  }
+
+  .green {
+      color: #2EC4B6 !important;
   }
