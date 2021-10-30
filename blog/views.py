@@ -92,7 +92,7 @@ def delete_blog(request, blog_id):
 def full_post(request, blog_id):
     blogs = get_object_or_404(BlogPost, pk=blog_id)
     
-    comments = BlogComments.objects.filter(blog_post=blog_post)
+    comments = BlogComments.objects.filter(pk=blog_post_id)
 
 
 
