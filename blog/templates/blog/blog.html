@@ -29,7 +29,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-4">
              <p>Posted: <span class="text-muted">{{ blog.blog_created | timesince}} ago</span></p>
-             <p>Posted By: <span class="text-muted">{{ blog.blog_author }}</span></p>
+             <p>Posted By: <span class="text-muted">{{ blog.blog_author|capfirst }}</span></p>
              <p>On: <span class="text-muted">{{ blog.blog_created }}</span></p>
              <p>Updated: <span class="text-muted">{{ blog.blog_updated }}</span></p>
              {% if request.user.is_superuser %}

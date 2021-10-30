@@ -86,7 +86,47 @@ base.html consists of the sites navbar with various page navigating links and th
 2. The searchbar allows me to search the site with my own terms. I tested this by typing 'bass' into it and a products page with all bass guitar listings renders.
 3. The 'My Account' icon opens up a dropdown menu. If I am signed out this reads 'Login' and 'Register'. If signed in as a non-superuser this reads 'My Profile' and 'Logout'. When signed in as a superuser this reads 'Product Management', 'Upload Blog', 'Customer Messages', 'My Profile' and 'Logout'. All links lead to their respective pages, 'Product Management' being a page for uploading products to the database.
 4. The shopping cart icon brings me to the shopping cart page. If this page is empty, a €0.00 will be present underneath the icon. If the cart has items in it, the subtotal of all items will be present underneath the icon. 
-5. Each navigation link except home, which just renders the index.html template, opens a dropdown menu. 
+5. Each navigation link except home, which just renders the index.html template, opens a dropdown menu. I tested that each link functions as expected and brings me to the page described in the link.
+6. When logged in as a superuser, the blog dropdown has both the blog link and the 'Upload Blog' link since the latter is only available to superusers.
+7. Similarly in the footer, when logged in as a superuser I get both 'Blog' and 'Upload Blog' appearing as links. When not a superuser only 'blog' appears. 
+8. The 'Contact Us' link brings me to the contact page as expected and the social media links open up each in a new tab, the sign in page for each website.  
+
+### INDEX.HTML
+1. This page features a carousel with three hero images on desktop view, and a single image on mobile view. I can test this by using Chrome developer tools to minimise the screen size.
+2. Below this are the category links each of which brings me to a page with all categories that I have organised under a particular heading. For example, the drums link brings me to a page with all categories related to drums, i.e 'Cymbals', 'Drums Sets' and 'Shell Sets'.
+
+### PRODUCTS.HTML
+1. Clicking the 'All Products' link in the navbar brings me to a listing page with all of the products on sale on the site. 
+2. Each product is listed with both the title and the image being clickable and bringing me to the product detail page for the listing. 
+3. Using the navbar I can navigate to any category that the products are organised under, which renders a page with just that category present.
+4. When looking at the products listing page on mobile view, each listing has it's contents stacked on top of each other by using 'flex-direction: column;' since each listing is organised in 'display: flex;'.  
+5. When logged in as a superuser I get two more buttons on this page. One for 'Edit' which brings me to the edit product page, and another for 'Delete', which deletes the product.
+
+### PRODUCT_DETAIL.HTML
+1. The product detail view gives me the ability to add a specified quantity of the product to my cart by using the quantity selctor and clicking the 'Add To Cart' button. 
+2. Beside that button is the 'Back To Shop' button which returns me to the listing for all products.
+3. Clicking on the product image opens up a detailed view of the image in a new tab.
+4.  When logged in as a superuser I get two more buttons on this page. One for 'Edit' which brings me to the edit product page, and another for 'Delete', which deletes the product.
+
+
+### ADD_PRODUCT.HTML
+1. Clicking on the 'Product Management' button in the profile link while logged in as a superuser, I am brought to a form for uploading a product. 
+2. On this form, the 'Name', 'Description' and 'Price' fields are mandatory, and trying to submit the form without any of these results in the form not being submitted with a message asking me to fill this field in.
+3. The price field can only be submitted with at most four digits followed by two more after the decimal point. When attempting to upload with a higher price an error message displays asking me to review the form and try again. 
+4. Clicking on the 'Cancel Upload' button returns me to the all products page.
+5. Clicking on 'Add' will upload the product to the database and by extension to the site.
+
+### EDIT_PRODUCT.HTML
+1. This page has the same validation as the above form which I tested by first trying to upload a form without the name field and getting a message telling me to fill it in. 
+2. I then tried the same test as above by entering a price with more than six digits and getting an error message.
+3. Clicking on 'Edit' will edit the product in the database and by extension on the site. I tested this by making sure the product listing features the changes that I had entered in the form.
+
+### PROFILE.HTML
+1. 
+
+
+
+
 
 
 
