@@ -31,7 +31,7 @@
              <span class="dark-blue"><strong>Updated: </strong><span class="text-muted">{{ blogs.blog_updated }}</span></span>
         </div>
     </div>
-
+    <!--Check if user is a site admin-->
     {% if request.user.is_superuser %}
     <div class="row">
         <div class="col-12 center mt-2 mb-2" id="options">
@@ -47,30 +47,27 @@
     <div class="row">
         <div class="col-12 center">
             {% if blogs.blog_image %}
-                <img src="{{ blogs.blog_image_url }}" alt="{{ blogs.blog_title }}" class="blog-image-full">
+            <img src="{{ blogs.blog_image_url }}" alt="{{ blogs.blog_title }}" class="blog-image-full">
             {% else %}
-                <img src="{{ MEDIA_URL }}no-blog-image.jpeg" alt="{{ blogs.blog_title }}" class="blog-image-full">
-             {% endif %}
+            <img src="{{ MEDIA_URL }}no-blog-image.jpeg" alt="{{ blogs.blog_title }}" class="blog-image-full">
+            {% endif %}
         </div>
         <div class="col-12">
             <p class="blog-description-full center"><i><strong>{{ blogs.blog_heading }}</strong></i></p>
         </div>
         <div class="col-12">
             <p>{{ blogs.blog_main }}</p>
-          <p class="red mt-4"><strong>Posted: </strong><span class="dark-blue">{{ blogs.blog_created | timesince }} ago</span></p>
+            <p class="red mt-4"><strong>Posted: </strong><span class="dark-blue">{{ blogs.blog_created | timesince }} ago</span></p>
         </div>
         <div>
-    </div>
-       <div class="col-12">
+        </div>
+        <div class="col-12">
             <p class="center">
                 <a href="{% url 'blog_post_page' %}" class="btn btn-links mt-3">Back to Blogs</a>
-              </p>
+            </p>
         </div>
     </div>
 </div>
-
-
-
 {% endblock %}
 
 {% block postloadjs %}

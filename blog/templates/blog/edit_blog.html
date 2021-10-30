@@ -17,25 +17,23 @@
     </div>
   </div>
 {% endblock %}
-
+<!--Edit Form-->
 {% block content %}
 <div>
-    <h2 class="logo-font pt-5 mt-5 mb-5 center blog-logo headings"><i>Edit Blog</i></h2>
+  <h2 class="logo-font pt-5 mt-5 mb-5 center blog-logo headings"><i>Edit Blog</i></h2>
 </div>
 <div class="form-container edit-form">
-    <div class="row">
-      <div class="col-12">
-        <form method="POST" action="{% url 'edit_blog' blog.id %}" enctype="multipart/form-data">
+  <div class="row">
+    <div class="col-12">
+      <form method="POST" action="{% url 'edit_blog' blog.id %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form | crispy }}
         <div class="text-right">
           <a class="btn btn-links" href="{% url 'blog_post_page' %}">Cancel Edit</a>
           <button type="submit" class="btn btn-links">Edit Blog</button>
         </div>
-        </form>
-      </div>
+      </form>
     </div>
+  </div>
 </div>
-
-
 {% endblock %}

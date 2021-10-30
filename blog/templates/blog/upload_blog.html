@@ -20,22 +20,20 @@
 
 {% block content %}
 <div>
-    <h2 class="logo-font mt-5 mb-5 center blog-logo headings"><i>Upload Blog</i></h2>
+  <h2 class="logo-font mt-5 mb-5 center blog-logo headings"><i>Upload Blog</i></h2>
 </div>
 <div class="form-container edit-form">
-    <div class="row">
-      <div class="col-12">
-        <form method="POST" action="{% url 'upload_blog' %}" enctype="multipart/form-data">
+  <div class="row">
+    <div class="col-12">
+      <form method="POST" action="{% url 'upload_blog' %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form | crispy }}
         <div class="text-right">
           <a class="btn btn-links" href="{% url 'home' %}">Cancel Upload</a>
           <button type="submit" class="btn btn-links">Upload Blog</button>
         </div>
-        </form>
-      </div>
+      </form>
     </div>
+  </div>
 </div>
-
-
 {% endblock %}

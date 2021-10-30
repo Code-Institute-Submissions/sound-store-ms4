@@ -23,38 +23,37 @@
     <h2 class="logo-font mt-5 mb-5 center blog-logo headings"><i>Blog</i></h2>
 </div>
 
-{% for blog in blog_list %} <!--for blog in blogs-->
+{% for blog in blog_list %}
 <hr>
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-4">
-             <p>Posted: <span class="text-muted">{{ blog.blog_created | timesince}} ago</span></p>
-             <p>Posted By: <span class="text-muted">{{ blog.blog_author|capfirst }}</span></p>
-             <p>On: <span class="text-muted">{{ blog.blog_created }}</span></p>
-             <p>Updated: <span class="text-muted">{{ blog.blog_updated }}</span></p>
-             {% if request.user.is_superuser %}
-             <div>
-              <a class="edit btn mr-5 mob-admin-btn" href="{% url 'edit_blog' blog.id %}">Edit</a>
-              <a class="delete btn mob-admin-btn" href="{% url 'delete_blog' blog.id %}">Delete</a>
-            </div>
-             {% endif %}
-         </div>
-         <div class="col-xs-12 col-sm-8">
-             <h4 class="blog-title headings" id="mob-blog-title">{{ blog.blog_title }}</h4>
-             {% if blog.blog_image %}
-                <img src="{{ blog.blog_image_url }}" alt="{{ blog.blog_title }}" class="blog-image">
-            {% else %}
-                <img src="{{ MEDIA_URL }}no-blog-image.jpeg" alt="{{ blog.blog_title }}" class="blog-image">
-             {% endif %}
-         </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <p>Posted: <span class="text-muted">{{ blog.blog_created | timesince}} ago</span></p>
+      <p>Posted By: <span class="text-muted">{{ blog.blog_author|capfirst }}</span></p>
+      <p>On: <span class="text-muted">{{ blog.blog_created }}</span></p>
+      <p>Updated: <span class="text-muted">{{ blog.blog_updated }}</span></p>
+      {% if request.user.is_superuser %}
+      <div>
+        <a class="edit btn mr-5 mob-admin-btn" href="{% url 'edit_blog' blog.id %}">Edit</a>
+        <a class="delete btn mob-admin-btn" href="{% url 'delete_blog' blog.id %}">Delete</a>
+      </div>
+      {% endif %}
     </div>
-
+    <div class="col-xs-12 col-sm-8">
+      <h4 class="blog-title headings" id="mob-blog-title">{{ blog.blog_title }}</h4>
+      {% if blog.blog_image %}
+      <img src="{{ blog.blog_image_url }}" alt="{{ blog.blog_title }}" class="blog-image">
+      {% else %}
+      <img src="{{ MEDIA_URL }}no-blog-image.jpeg" alt="{{ blog.blog_title }}" class="blog-image">
+      {% endif %}
+    </div>
+  </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-4"></div>
-        <div class="col-xs-12 col-sm-8 head-container">
-            <p class="blog-description "><strong><i>{{ blog.blog_heading }}</i></strong></p>
-            <a href="{% url 'full_post' blog.id %}" class="btn btn-links">See full Post</a>
-        </div>
+      <div class="col-xs-12 col-sm-4"></div>
+      <div class="col-xs-12 col-sm-8 head-container">
+        <p class="blog-description "><strong><i>{{ blog.blog_heading }}</i></strong></p>
+        <a href="{% url 'full_post' blog.id %}" class="btn btn-links">See full Post</a>
+      </div>
     </div>
   </div>
 </div>

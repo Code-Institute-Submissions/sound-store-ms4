@@ -53,7 +53,7 @@ The target audience for Sound Store is both anyone looking for musical instrumen
 12. Github - Used to store my project.
 13. Coolors (https://coolors.co/) - To generate a colour pallette for the sites styling.
 14. Temp Mail (https://tempmail.net/) - Used to generate a temporary email account to test that emails are being sent correctly.
-15. Gmail - Used for 2-step authentication when registering for an account. 
+15. Gmail - Used for 2-step authentication when a user registers for an account. 
 
 
 # Design
@@ -194,6 +194,16 @@ base.html consists of the sites navbar with various page navigating links and th
 ## CONFIRMATION EMAILS
 1. To test that the confirmation email works, I can make a purchase and then see that I have received an email with details of my order in my email account.
 2. To test that the 'Confirm Email Address' email works, I can register for an account using a temporary email account from Temp Mail (https://www.tempmail.net). After filling out the registration form I am next met with a Confirm Email Address allauth screen. I can then check my temporary email account for this email and copy the link into the url bar. Here I can click the 'Confirm Email Address' button and be next met with a login screen where I can login with my new credentials.
+
+## TESTING DATA MANAGEMENT
+1. I can test how the data is handled in the database by clicking either 'Product Management' or 'Upload Blog' in the profile dropdown menu. Uploading either will produce a new listing on the website, visible either by clicking the 'All Products' link or the 'Blog' link. If I go to https://sound-store-ms-4.herokuapp.com/admin/ I can see that these listings are now present in the database. Similarly deleting either blog or product listing will result in the listing being removed from both the site and from the admin database. Editing either blog or product listing will result in the altered listing showing up on the site and in the admin panel at https://sound-store-ms-4.herokuapp.com/admin/.
+
+## TESTING SITE RESPONSIVENESS
+1. Developer tools on Google Chrome was used extensively to test responsiveness. This allows me to look at the site as it would appear on a variety of different device sizes. Using these different device views I can see where there are issues and fix them accordingly using media queries in the css files.
+2. I had access to multiple devices during development. I had an iPhone 5 and 7, MacBook Pro (13" screen) and another 15" screen laptop aswell as a 21" wide/13" inch high monitor. Using these I could test the sites responsiveness.
+
+# Data Schema
+Seven different models classes contained in models.py files were used for the database schema of the site. 
 
 
 

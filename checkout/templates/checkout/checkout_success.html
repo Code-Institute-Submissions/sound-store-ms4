@@ -30,27 +30,24 @@
     </div>
 
     <div class="row">
-       <div class="col-12 col-lg-7 ">
-         <!--Order Summary-->
-         <div class="order-confirmation-wrapper p-2 border">
-           <div class="row">
-             <div class="col">
-               <small class="text-muted">Order Info:</small>
-             </div>
-           </div>
-
-           <div class="row">
-             <div class="col-12 col-md-4">
-               <p><strong><i>Order Number:</i></strong></p>
-             </div>
-             <div class="col-12 col-md-8 text-md-right">
-               <p class="small">{{ order.order_number }}</p>
-             </div>
-           </div>
-           
+      <div class="col-12 col-lg-7 ">
+        <!--The Order Summary-->
+        <div class="order-confirmation-wrapper p-2 border">
+          <div class="row">
+            <div class="col">
+              <small class="text-muted">Order Info:</small>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <p><strong><i>Order Number:</i></strong></p>
+            </div>
+            <div class="col-12 col-md-8 text-md-right">
+              <p class="small">{{ order.order_number }}</p>
+            </div>
+          </div>
           <hr>
-
-           <div class="row">
+          <div class="row">
             <div class="col-12 col-md-4">
               <p><strong><i>Order Date:</i></strong></p>
             </div>
@@ -58,10 +55,8 @@
               {{ order.date }}
             </div>
           </div>
-
           <hr>
-
-           <div class="row">
+          <div class="row">
             <div class="col">
               <small class="text-muted">Order Details:</small>
             </div>
@@ -77,16 +72,12 @@
             </div>
           </div>
           {% endfor %}
-
           <hr>
-
           <div class="row">
             <div class="col">
               <small class="text-muted">Delivering to:</small>
             </div>
           </div>
-
-          
           <div class="row">
             <div class="col-12 col-md-4">
               <p><strong><i>Full Name:</i></strong></p>
@@ -95,9 +86,7 @@
               {{ order.full_name }}
             </div>
           </div>
-
           <hr>
-
           <div class="row">
             <div class="col-12 col-md-4">
               <p><strong><i>Address 1:</i></strong></p>
@@ -106,7 +95,6 @@
               {{ order.street_address1 }}
             </div>
           </div>
-
           <hr>
 
           {% if order.street_address2  %}

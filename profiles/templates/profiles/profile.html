@@ -21,12 +21,12 @@
 
 {% block content %}
 <div class="container profile-container">
-    <div class="row">
-        <div class="col text-center mt-3">
-            <hr>
-            <h2 class="logo-font mt-5 mb-5 center headings"><i>My Contact Details</i></h2>
-        </div>
+  <div class="row">
+    <div class="col text-center mt-3">
+      <hr>
+      <h2 class="logo-font mt-5 mb-5 center headings"><i>My Contact Details</i></h2>
     </div>
+  </div>
 </div>
 <div class="row">
   <div class="col-12 col-lg-6">
@@ -41,37 +41,36 @@
     <p class="text-muted history-mob"><i>Order History</i></p>
     <div class="order-history table-responsive">
       <table class="table table-sm table-borderless">
-          <thead>
-              <tr>
-                  <th>Order Number</th>
-                  <th class="date-mob">Date</th>
-                  <th>Items</th>
-                  <th>Order Total</th>
-              </tr>
-          </thead>
-          <tbody>
-              {% for order in orders %}
-                  <tr>
-                      <td>
-                          <a href="{% url 'order_history' order.order_number %}"
-                          title="{{ order.order_number }}">
-                              {{ order.order_number|truncatechars:6 }}
-                          </a>
-                      </td>
-                      <td class="date-mob">{{ order.date }}</td>
-                      <td>
-                          <ul class="list-unstyled">
-                              {% for item in order.lineitems.all %}
-                                  <li class="small">
-                                      {{ item.product.name }} x{{ item.quantity }}
-                                  </li>
-                              {% endfor %}
-                          </ul>
-                      </td>
-                      <td>${{ order.grand_total }}</td>
-                  </tr>
-              {% endfor %}
-          </tbody>
+        <thead>
+          <tr>
+            <th>Order Number</th>
+            <th class="date-mob">Date</th>
+            <th>Items</th>
+            <th>Order Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in orders %}
+          <tr>
+            <td>
+              <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
+                {{ order.order_number|truncatechars:6 }}
+              </a>
+            </td>
+            <td class="date-mob">{{ order.date }}</td>
+            <td>
+              <ul class="list-unstyled">
+                {% for item in order.lineitems.all %}
+                <li class="small">
+                  {{ item.product.name }} x{{ item.quantity }}
+                </li>
+                {% endfor %}
+              </ul>
+            </td>
+            <td>${{ order.grand_total }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
       </table>
     </div>
   </div>
