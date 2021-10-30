@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import BlogPost, BlogComments
-from .forms import BlogForm, BlogCommentForm
+from .models import BlogPost
+from .forms import BlogForm
 from django.core.paginator import Paginator
+
 
 @login_required
 def blog_post_page(request):
@@ -18,6 +19,7 @@ def blog_post_page(request):
         'blog_list': blog_list,
     }
     return render(request, 'blog/blog.html', context)
+
 
 @login_required
 def upload_blog(request):
@@ -44,6 +46,7 @@ def upload_blog(request):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def edit_blog(request, blog_id):
@@ -74,7 +77,7 @@ def edit_blog(request, blog_id):
     }
 
     return render(request, template, context)
-    
+
 
 @login_required
 def delete_blog(request, blog_id):
@@ -94,5 +97,5 @@ def full_post(request, blog_id):
     context = {
         'blogs': blogs,
     }
-    
+
     return render(request, 'blog/full_blog.html', context)

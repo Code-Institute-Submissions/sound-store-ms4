@@ -30,6 +30,7 @@ def cache_checkout_data(request):
             processed. Please try again later')
         return HttpResponse(content=e, status=400)
 
+
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -79,7 +80,8 @@ def checkout(request):
                 please review and try again.")
     else:
         bag = request.session.get('bag', {})
-        # Ensures user cannot access checkout by typing /checkout in url
+        # Ensures user cannot access
+        # checkout by typing /checkout in url
         if not bag:
             messages.error(request, "You haven't added anything to your cart just yet")
             return redirect(reverse('products'))
@@ -151,7 +153,6 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
-
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \

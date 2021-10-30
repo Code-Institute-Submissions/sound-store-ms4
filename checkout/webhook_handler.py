@@ -28,13 +28,13 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
+
         send_mail(
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
-        )        
+        )
 
     def handle_event(self, event):
         """Handle an unknown or unexpected or generic webhook event"""
@@ -52,7 +52,7 @@ class StripeWH_Handler:
 
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
-        
+
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
@@ -152,7 +152,7 @@ class StripeWH_Handler:
 
     def handle_payment_intent_payment_failed(self, event):
         """
-        Handle payment_intent.payment_failed 
+        Handle payment_intent.payment_failed
         """
         return HttpResponse(
             content=f'{event["type"]} Webhook was received',

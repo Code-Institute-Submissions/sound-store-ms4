@@ -79,7 +79,7 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """ 
+    """
     Add product to the database if admin
     """
     if not request.user.is_superuser:
@@ -107,7 +107,7 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ 
+    """
     Edit product in the database if admin
     """
     if not request.user.is_superuser:
@@ -122,7 +122,8 @@ def edit_product(request, product_id):
             messages.success(request, 'Product edit was successful')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Product not edited, please ensure form filled out correctly')
+            messages.error(request, 'Product not edited, please \
+                ensure form filled out correctly')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'Currently editing {product.name}')
@@ -138,7 +139,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ 
+    """
     Delete product in the database if admin
     """
     if not request.user.is_superuser:

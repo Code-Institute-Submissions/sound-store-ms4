@@ -205,6 +205,14 @@ base.html consists of the sites navbar with various page navigating links and th
 # Data Schema
 Seven different models classes contained in models.py files were used for the database schema of the site. 
 
+# Code Validation
+HTML: the html was validated using the W3C validator from the site https://validator.w3.org/. As can be seen from the following screenshot most, and in the case of this screenshot, all of the errors shown in the validator are related to the django syntax. 
+
+CSS: the css files were validated using The W3C CSS Validation Service (http://jigsaw.w3.org/css-validator/validator) and no errors were found.
+
+Javascript: The javascript files were validated using JShint (https://jshint.com/) with no major errors being found.
+
+Python: My Python code was validated using the Pep8 validator (http://pep8online.com/) with all major issues being dealt with.
 
 
 

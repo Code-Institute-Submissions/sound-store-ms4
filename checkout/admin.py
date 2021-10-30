@@ -12,9 +12,9 @@ class OrderAdmin(admin.ModelAdmin):
 
     # These lines cannot be altered in database
     readonly_fields = ('order_number', 'date',
-                      'delivery_cost', 'order_total',
-                      'grand_total', 'original_bag',
-                      'stripe_pid')
+                       'delivery_cost', 'order_total',
+                       'grand_total', 'original_bag',
+                       'stripe_pid')
 
     fields = ('order_number', 'user_profile', 'date', 'full_name',
               'email', 'phone_number', 'country',

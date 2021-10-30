@@ -22,17 +22,16 @@ def webhook(request):
 
     try:
         event = stripe.Webhook.construct_event(
-        payload, sig_header, wh_secret
-        )
+                payload, sig_header, wh_secret
+                )
     except ValueError as e:
-        # Invalid 
+        # Invalid
         return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError as e:
         # Invalid signature
         return HttpResponse(status=400)
     except Exception as e:
         return HttpResponse(content=e, status=400)
-
 
     # Create an instance Webhook_handler
     handler = StripeWH_Handler(request)
@@ -45,7 +44,6 @@ def webhook(request):
 
     # Acquire Stripe webhook type
     event_type = event['type']
-
 
     event_handler = event_map.get(event_type, handler.handle_event)
 

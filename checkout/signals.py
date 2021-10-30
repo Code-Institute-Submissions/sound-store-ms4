@@ -7,7 +7,8 @@ from .models import OrderLineItem
 @receiver(post_save, sender=OrderLineItem)
 def update_on_save(sender, instance, created, **kwargs):
     """
-    Check for instance of an order sent by OrderLineItem, and check if it's a news
+    Check for instance of an order sent by OrderLineItem,
+    and check if it's a news
     order or an update to pre-existing one
     """
     instance.order.update_total()

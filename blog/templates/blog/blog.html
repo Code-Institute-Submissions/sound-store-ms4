@@ -56,13 +56,12 @@
       </div>
     </div>
   </div>
-</div>
 {% endfor %}
 
 <!--Pagination-->
 <div class="col-12 center mt-5">
 {% if blog_list.has_previous %}
-  <a class="mr-2 pagination-links" href="?page=1">&laquo First Page</a>
+  <a class="mr-2 pagination-links" href="?page=1">&laquo; First Page</a>
   <a class="mr-2 pagination-links-alt" href="?page={{ blog_list.previous_page_number }}">Previous</a>
 {% endif %}
 
@@ -70,7 +69,7 @@
 
 {% if blog_list.has_next %}
   <a class="pagination-links-alt mr-2" href="?page={{ blog_list.next_page_number }}">Next</a>
-  <a class="pagination-links" href="?page={{ blog_list.paginator.num_pages }}">Last &raquo</a>
+  <a class="pagination-links" href="?page={{ blog_list.paginator.num_pages }}">Last &raquo;</a>
 {% endif %}
 </div>
 {% endblock %}
