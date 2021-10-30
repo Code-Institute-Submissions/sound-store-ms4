@@ -3,7 +3,7 @@
 
 # UX
 ## User Stories:
-The target audience for Sound Store is both anyone looking for musical instruments, and musicians who also want to read the sites blog which is intended to impart insight into musical topics. 
+The target audience for Sound Store is both anyone looking for musical instruments, and musicians who also want to read the sites blog which is intended to impart insight into various musical topics. 
 1. I want to find what I am looking for in an intuitive, easy manner and to not have to go to too much effort to find what I need.
 2. I want relevant information on products I am querying. This includes price, a product image, details of free delivery.
 3. I want a way to choose quantities of anything I want and update these quantities and/or delete a product from my shopping cart.
@@ -12,9 +12,23 @@ The target audience for Sound Store is both anyone looking for musical instrumen
 6. I want to see my purchase history in my profile, which also stores my contact details.
 7. I want to be able to logout of my profile.
 8. As well as have easy access to products via links on screen, I also want to be able to search for my own search terms.
-9. To be able to navigate pages intuitively via button links without recourse to the browser back and forward arrows.
-10. To have access to a blog to get musical information not necessarily linked to the store.
-11. To be able to contact the store via a contact form.
+9.  I want to have access to a blog to get musical information not necessarily linked to the store.
+10. I want to be able to contact the store via a contact form.
+11. I want to find the company on social media.
+
+
+## TESTING OF USER STORIES
+1. All the links a user may need or want are present in the navbar and footer, both of which are present on every page of the site.
+2. The product detail page includes all of this information.
+3. Quantities can be chosen on the product detail page. The quantity of an item can also be updated on the shopping cart screen as well as deleted altogether from the cart.
+4. The shopping cart icon in the navbar can be accessed at any time. When a product is added to the cart, a success message that the item has been added to the cart appears with a button that will bring the user to the shopping cart screen.
+5. There is an option on the address input form when checking out and logged in for the user to click, that will automatically save their information in their profile.
+6. Order History is presented in the user's profile and is automatically updated with each purchase.
+7. A logout option is present if the user clicks the profile icon.
+8. A searchbar is present in the navbar allowing the user to achieve this.
+9. For logged in users there is a blog that they can read with various topics of interest to musicians.
+10. There is a contact form in the footer which the user can use for this purpose.
+11. Social media links are present in the footer.
 
 
 # Technologies Used:
@@ -62,15 +76,16 @@ With the exception of the White and Gold colours, the rest of the colours came f
 The site relies heavily on images. The home page uses a carousel of three images. These three images are used to represent the actual walk-in store. On the index page are clickable instrument-image links to the product categories. Also there are a large number of product images on the site.
 
 
-
-
-
-
-
-
-
-
-
+# Features
+1. The site is responsive accorss all device sizes
+2. The site features multiple ways to navigate products and features including a searchbar for querying products, and many links to products in the navbar as well as blog and contact links in the footer.
+3. The site gives users the ability to create a profile and see their address listing aswell as a history of their orders to date.
+4. Admin users can upload a product and blog, aswell as edit and delete both.
+5. Site users can send a contact message to the owners of the site, admin users can see this comment either in the admin section of the site or in an admin only link on the contact page or in the profile icon dropdown.
+6.  The shopping cart can be accessed at any time and the user has the ability to checkout anytime they have products in the cart.
+7. Confirmation messages of user activity are given for most things a user does, including adding items to their cart or if they have filled out a form incorrectly. 
+8. The site contains custom error handling messages that are activated if a user trys to access pages beyond what they are allowed to.
+9. A user can register and login at any time.
 
 
 # Testing
@@ -158,7 +173,7 @@ base.html consists of the sites navbar with various page navigating links and th
 ### UPLOAD_BLOG.HTML
 1. Similar to the edit_blog.html page, this page is for superusers only. If not logged in as an admin, I have no way of accessing this page. All fields except those for images are required and give the expected error message if not filled in. Uploading a blog successfully I can see that it has been added to the blog list page.
 
-## Testing a purchase
+## TESTING A PURCHASE
 1. The purchase feature on the site comes from Stripe Payments (https://stripe.com/ie). When the purchase form is filled out correctly and submitted on the checkout page, I receive both a webhook event in the stripe dashboard aswell as a payment event indicating that the payment has been processed correctly and has been submitted to stripe. // Show imgaes
 2. The webhook feature is for making sure that a payment is submitted, and all the details including who made the purchase etc. are stored in the stripe account in the event of an error during the submission process. 
 
@@ -168,6 +183,12 @@ base.html consists of the sites navbar with various page navigating links and th
 ## ERROR HANDLING
 1. If trying to access a page that does not exist, a custom 404 error screen will be rendered. This I can test by typing something completely random like 'https://sound-store-ms-4.herokuapp.com/asksksks' into the url field and getting a custom 404 page telling me that the 'page either does not exist or is missing' and giving me a link back to the products page.
 2. If I attempt to access a page which requires a user to be logged in I am given the login screen. For example typing 'https://sound-store-ms-4.herokuapp.com/profile/' into the url field will bring me to the login screen. Similarly trying to access the blog when logged out will bring me to the login screen also.
+
+## CONFIRMATION EMAILS
+1. To test that the confirmation email works, I can make a purchase and then see that I have received an email with details of my order in my email account.
+2. To test that the 'Confirm Email Address' email works, I can register for an account using a temporary email account from Temp Mail (https://www.tempmail.net). After filling out the registration form I am next met with a Confirm Email Address allauth screen. I can then check my temporary email account for this email and copy the link into the url bar. Here I can click the 'Confirm Email Address' button and be next met with a login screen where I can login with my new credentials.
+
+
 
 
 
