@@ -20,17 +20,19 @@ The target audience for Sound Store is both anyone looking for musical instrumen
 # Technologies Used:
 1. Html, Css, JavaScript and Python are the programming languages used.
 2. Django - A Python framework, was used to build the site.
-3. Jquery - A simpler form of javascript
-4. Bootstrap - A css framework  
-5. Favicon (https://favicon.io/favicon-generator/) - To get icon for the sites tab.
+3. Jquery - A simpler form of javascript.
+4. Bootstrap - A css framework.
+5. Favicon (https://favicon.io/favicon-generator/) - To get the icon for the sites tab.
 6. Font Awesome (https://fontawesome.com/v4.7/icons/) - To get icons for social media / shopping cart etc.
-7. Google Fonts - (https://fonts.google.com/) - To get letter styling fonts for the site.
+7. Google Fonts - (https://fonts.google.com/) - To get fonts for the site.
 8. Balsamiq - Used to make wireframes.
 9. Stripe - Used to process payments in the store
-10. PostgreSQL - Database used on the deployed site.
-11. SQlite3 - Database used during development.
+10. PostgreSQL - Heroku database used on the deployed site.
+11. SQlite3 - Django database used during development.
 12. Github - Used to store my project.
-13. Coolors (https://coolors.co/) - To generate a colour pallette to choose from.
+13. Coolors (https://coolors.co/) - To generate a colour pallette for the sites styling.
+14. Temp Mail (https://tempmail.net/) - Used to generate a temporary email account to test that emails are being sent correctly.
+15. Gmail - Used for 2-step authentication when registering for an account. 
 
 
 # Design
@@ -54,10 +56,58 @@ With the exception of the White and Gold colours, the rest of the colours came f
 ## Fonts Used
 1. Sonsie One - This font reminds me of some of the Fender guitars or Gibson guitars logos and therefore I thought it would be a good fit for a music related site.
 2. Roboto - Easy to read font used in the navbar links
-3. Tenor Sans - A readable font to render the product names font in.
+3. Tenor Sans - A readable font to render the product names and page headers in.
 
 ## Images
-The site relies heavily on images. The home page uses a carousel of three images, the login page and registration also use an image on each. These five images are used to represent the actual walk-in store. On the index page are clickable instrument-image links to the product categories. Also there are a large number of product images on the site.
+The site relies heavily on images. The home page uses a carousel of three images. These three images are used to represent the actual walk-in store. On the index page are clickable instrument-image links to the product categories. Also there are a large number of product images on the site.
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Testing
+During development of the site Debug was set to True in the project level settings.py file. This provided me with django error screens when there were issues with my code. During deployment this was set to False and replaced with custom error screens. 
+
+All testing of the site was conducted on both the deployed Heroku site and during development on the Gitpod server.
+
+## Manual Testing Of Each Section Of The Site
+### BASE.HTML
+base.html consists of the sites navbar with various page navigating links and the sites footer with social media links, the link to the contact app and to the blog, aswell as the copyright notice. When testing this page, I first of all checked all links on mobile view to make sure they matched the desktop view in their functionality, which they did. The main design difference between both is that on mobile there is a 'burger bar' icon leading to the navigation links in a dropdown menu. The search bar, profile link and shopping cart link all perform the same function as in the desktop view. Also the 'sound store' homepage link is not present in the mobile view but the home link in the dropdown menu performs the same function as it. 
+#### Testing of each feature
+1. The 'sound store' link brings me back to the homepage.
+2. The searchbar allows me to search the site with my own terms. I tested this by typing 'bass' into it and a products page with all bass guitar listings renders.
+3. The 'My Account' icon opens up a dropdown menu. If I am signed out this reads 'Login' and 'Register'. If signed in as a non-superuser this reads 'My Profile' and 'Logout'. When signed in as a superuser this reads 'Product Management', 'Upload Blog', 'Customer Messages', 'My Profile' and 'Logout'. All links lead to their respective pages, 'Product Management' being a page for uploading products to the database.
+4. The shopping cart icon brings me to the shopping cart page. If this page is empty, a €0.00 will be present underneath the icon. If the cart has items in it, the subtotal of all items will be present underneath the icon. 
+5. Each navigation link except home, which just renders the index.html template, opens a dropdown menu. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Bugs Encountered
@@ -157,3 +207,6 @@ Amazon Web Services S3 was used to store the projects static files and images.
 ### Forms
 1. Piano shop image on login.html taken from https://www.sweetwater.com/ (https://media.sweetwater.com/about/press-releases/images/Piano_Store.jpg).
 2. Guitar display image on registraion page taken from https://content.guitarvillage.co.uk/ (https://content.guitarvillage.co.uk/images/2016/02/PRSRoomWideOptimised.jpg)
+
+## 
+Both my mentor Akshat Garg and many people on Slack were very helpful in dealing with bugs encountered during development.
