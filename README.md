@@ -1,5 +1,12 @@
-# Sound Store
+The profiles used during development of this website are:
+1. username: admin, password: gtnwhnks
+2. username: jeremy, password: gtnwhnks
 
+# Sound Store
+Sound Store is an e-commerce store specialising in musical instruments. The site also provides users with a blog written by the company's staff which gives insight into various topics of musical interest.
+
+The deployed website can be found here [here](https://sound-store-ms-4.herokuapp.com/)
+The wireframes used during development of the site can be found [here]()
 
 # UX
 ## User Stories:
