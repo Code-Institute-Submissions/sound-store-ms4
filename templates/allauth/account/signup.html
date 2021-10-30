@@ -5,7 +5,7 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block inner_content %}
-<div class="form-image-reg">
+<div class="form-image-reg" style="background-image: '{{ MEDIA_URL }}ms4-register.jpeg';">
   <div class="form-container center">
 <h1 class="pt-3 login-head center form-element">{% trans "Sign Up" %}</h1>
 <p class="form-element">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
