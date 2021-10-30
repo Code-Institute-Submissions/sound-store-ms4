@@ -225,6 +225,7 @@ body {
  .cat-products {
     font-family: 'Tenor Sans', serif;
     color: #122c34;
+    text-decoration: none;
  }
 
  .cat-products:hover {
@@ -560,6 +561,13 @@ body {
     background-color: #e71d36;
     border-color: #e71d36;
     border-radius: 0;
+}
+
+/* -------------------------------- Error Handling */
+
+.error-image {
+    height: 400px;
+    width: 100%;
 }
 
 /* -------------------------------- Media Queries */
