@@ -566,8 +566,8 @@ body {
 /* -------------------------------- Error Handling */
 
 .error-image {
-    height: 400px;
-    width: 100%;
+    height: 500px;
+    width: 500px;
 }
 
 /* -------------------------------- Media Queries */
