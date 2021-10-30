@@ -565,8 +565,8 @@ body {
 
 /* -------------------------------- Erro Handling */
 
-.error-handling {
-    padding-top: 300px;
+.error-container {
+    padding-top: 500px;
 }
 
 /* -------------------------------- Media Queries */
