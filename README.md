@@ -165,6 +165,10 @@ base.html consists of the sites navbar with various page navigating links and th
 ## LOGOUT FUNCTIONALITY
 1. When logged in, I can test that the logout functionality works as expected simply by clicking 'Logout' in the profile dropdown and being logged out of my account. The logout screen has two options, one for 'Sign Out' and the other for 'Back To Shop' in the event the user decides to remain logged in. 
 
+## ERROR HANDLING
+1. If trying to access a page that does not exist, a custom 404 error screen will be rendered. This I can test by typing something completely random like 'https://sound-store-ms-4.herokuapp.com/asksksks' into the url field and getting a custom 404 page telling me that the 'page either does not exist or is missing' and giving me a link back to the products page.
+2. If I attempt to access a page which requires a user to be logged in I am given the login screen. For example typing 'https://sound-store-ms-4.herokuapp.com/profile/' into the url field will bring me to the login screen. Similarly trying to access the blog when logged out will bring me to the login screen also.
+
 
 
 
