@@ -9,16 +9,13 @@
 
 {% block content %}
 
-<section class="">
-    <hr>
-    <div class="container">
+<section>
+    <div class="container error-container">
+        <hr>
         <div class="row">
           <div class="col-12">
-            <h2 class="center headings mt-3"><strong><i>400 error (Bad Request). Cannot load webpage...</i></strong></h2>
-            <p class="mt-3"><a class="cat-products" href="{% url 'products' %}">Back to store</a></p>
-          </div>
-          <div class="col-12 error-image">
-            <a href="{% url 'products' %}"><img src="{{MEDIA_URL}}ms4-login.jpeg" alt="Store Image"></a>
+            <h2 class="center headings mt-3 center"><strong><i>400 error (Bad Request). Cannot load webpage...</i></strong></h2>
+            <p class="mt-3"><a class="cat-products center" href="{% url 'products' %}">Back to store</a></p>
           </div>
         </div>
     </div>

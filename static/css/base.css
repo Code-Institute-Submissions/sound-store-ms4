@@ -563,11 +563,10 @@ body {
     border-radius: 0;
 }
 
-/* -------------------------------- Error Handling */
+/* -------------------------------- Erro Handling */
 
-.error-image {
-    height: 450px;
-    width:450px;
+.error-handling {
+    padding-top: 300px;
 }
 
 /* -------------------------------- Media Queries */
