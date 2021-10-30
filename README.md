@@ -189,10 +189,14 @@ base.html consists of the sites navbar with various page navigating links and th
 
 ## ERROR HANDLING
 1. If trying to access a page that does not exist, a custom 404 error screen will be rendered. This I can test by typing something completely random like 'https://sound-store-ms-4.herokuapp.com/asksksks' into the url field and getting a custom 404 page telling me that the 'page either does not exist or is missing' and giving me a link back to the products page.
+![404 error](/media/error-handling-2.png)
+
 2. If I attempt to access a page which requires a user to be logged in I am given the login screen. For example typing 'https://sound-store-ms-4.herokuapp.com/profile/' into the url field will bring me to the login screen. Similarly trying to access the blog when logged out will bring me to the login screen also.
 
 ## CONFIRMATION EMAILS
 1. To test that the confirmation email works, I can make a purchase and then see that I have received an email with details of my order in my email account.
+![Email Confirmation](/media/email-confirmation.png)
+
 2. To test that the 'Confirm Email Address' email works, I can register for an account using a temporary email account from Temp Mail (https://www.tempmail.net). After filling out the registration form I am next met with a Confirm Email Address allauth screen. I can then check my temporary email account for this email and copy the link into the url bar. Here I can click the 'Confirm Email Address' button and be next met with a login screen where I can login with my new credentials.
 
 ## TESTING DATA MANAGEMENT
@@ -207,45 +211,14 @@ Seven different models classes contained in models.py files were used for the da
 
 # Code Validation
 HTML: the html was validated using the W3C validator from the site https://validator.w3.org/. As can be seen from the following screenshot most, and in the case of this screenshot, all of the errors shown in the validator are related to the django syntax. 
+![HTML Validator](/media/html-validator.png)
 
 CSS: the css files were validated using The W3C CSS Validation Service (http://jigsaw.w3.org/css-validator/validator) and no errors were found.
 ![Valid CSS](/media/valid-css.png)
+
 Javascript: The javascript files were validated using JShint (https://jshint.com/) with no major errors being found.
 
 Python: My Python code was validated using the Pep8 validator (http://pep8online.com/) with all major issues being dealt with.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # Bugs Encountered
