@@ -122,7 +122,55 @@ base.html consists of the sites navbar with various page navigating links and th
 3. Clicking on 'Edit' will edit the product in the database and by extension on the site. I tested this by making sure the product listing features the changes that I had entered in the form.
 
 ### PROFILE.HTML
-1. 
+1. This page features an address form which I can update my information on. When I alter the form and click the 'Update Information' button I can see my information updated. To the right of this form, and beneath it on mobile view, is a user's Order History. I can test this works by making a purchase and seeing the purchase details show up here. The 'Order Number' button is clickable and brings me to a detailed view of the particular order clicked on.
+
+### CART.HTML
+1. If I have no orders in my cart, this page simply features an image of an empty cart and a link back to the products page.
+2. With products in my cart, a table is rendered featuring an image of the product, the name of the product and the price, quantity and subtotal price. The subtotal price is updated appropriately if more than one product is in the cart or if more than one of the same product is present.
+3. Two buttons are present beneath. One brings me back to the products page, while the 'Secure Checkout' page brings me to the checkout page.
+
+### CHECKOUT.HTML
+1. This page features an empty form to fill out address deatails, aswell as a minified table similar to the cart.html table with details of the cart products. If a user has already made a purchase on the site, this form will be prefilled with their details, with the option to update the saved details in the profile.html page. If checking out anonymously, the option is given to either create an account or login in order to save address details..
+2. If the address and card details are filled out correctly and the 'Complete Order' button is clicked, an orange overlay appears with a loading icon while the payment is being processed.
+
+### CHECKOUT_SUCCESS.HTML
+1. If an order is successfully submitted, a success message will show with confirmation details of the order and a checkout success screen will render which has a detailed listing of the purchase and where it's being shipped to.
+
+### CONTACT.HTML
+1. This page features a form for users to submit queries, comments etc. The form requires all fields to be filled out which I can test by trying to submit without each field filled out and getting a message asking me to fill them all in.
+2. Clicking 'Send' returns me to the index.html page and renders a success message letting me know the message has been received and to expect a reply soon.
+
+### MESSAGE-LIST.HTML
+1. If logged in as a superuser I can access this page through the footer or the profile dropdown in the navbar. It contains all the messages the company has received, including a message body, email and name field. These can be deleted using the 'Delete' button.
+
+### BLOG.HTML
+1. This page requires the user to be logged in so clicking on it while not logged in brings me to the login page. 
+2. After logging in I am presented with a list of blog entries ordered by latest to oldest. If I am a superuser I have two extra buttons for editing or deleting a blog which I can test. The edit button brings me to the blog edit page and the delete button deletes an entry. 
+3. Clicking the 'See Full Post' button brings me to the full post page as expected.
+
+### FULL_BLOG.HTML
+1. This page features the same details as the previous page with the addition of the main blog entry. A 'Back To Blogs' button at the bottom of the text returns me to the blogs listing page.
+2. Clicking the delete button gives me a 'Confirm Delete' button applied using javascript. Clicking this deletes an entry as expected.
+
+### EDIT_BLOG.HTML
+1. On this page each field with the exception of the image fields, are required. Trying to submit without one filled gives an error message as expected. If no image is given, a default image of a music stave is used instead. To test this I can edit an entry and remove the image  if present and check that the upload has the default image in the listing. 
+
+### UPLOAD_BLOG.HTML
+1. Similar to the edit_blog.html page, this page is for superusers only. If not logged in as an admin, I have no way of accessing this page. All fields except those for images are required and give the expected error message if not filled in. Uploading a blog successfully I can see that it has been added to the blog list page.
+
+## Testing a purchase
+1. The purchase feature on the site comes from Stripe Payments (https://stripe.com/ie). When the purchase form is filled out correctly and submitted on the checkout page, I receive both a webhook event in the stripe dashboard aswell as a payment event indicating that the payment has been processed correctly and has been submitted to stripe. // Show imgaes
+2. The webhook feature is for making sure that a payment is submitted, and all the details including who made the purchase etc. are stored in the stripe account in the event of an error during the submission process. 
+
+## LOGOUT FUNCTIONALITY
+1. When logged in, I can test that the logout functionality works as expected simply by clicking 'Logout' in the profile dropdown and being logged out of my account. The logout screen has two options, one for 'Sign Out' and the other for 'Back To Shop' in the event the user decides to remain logged in. 
+
+
+
+
+
+
+
 
 
 
