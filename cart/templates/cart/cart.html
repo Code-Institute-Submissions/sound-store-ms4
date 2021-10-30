@@ -124,7 +124,7 @@
             {% else %}
                 <p class="center mb-5">Your cart is currently empty.</p>
                 <p class="center">
-                  <img src='/media/empty-cart.jpg' alt="Empty Shopping Cart" class="category-images">
+                  <img src='{{ MEDIA_URL }}empty-cart.jpg' alt="Empty Shopping Cart" class="category-images">
                 </p>
                 <p class="center">
                 <a href="{% url 'products' %}" class="btn rounded-0 btn-lg">

@@ -63,7 +63,7 @@
 
 
         <!--Blog Comments-->
-       <!--<div class="mt-5">
+       <div class="mt-5">
             {% if user.is_authenticated %}
             <form method='POST' action="{% url 'full_post' blogs.id %}">
             <h3>Leave a Comment!</h3>
@@ -75,7 +75,12 @@
             </div>
             {% endif %}
             </form>
-        </div>-->
+        </div>
+        <div class="mt-2">
+            {% for comment in comments %}
+              <p>{{ comment.author_comment }}</p>
+            {% endfor %}
+        </div>
         <div>
             
         </div>
