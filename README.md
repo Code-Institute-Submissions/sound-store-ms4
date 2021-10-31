@@ -5,13 +5,13 @@ The profiles used during development of this website are:
 # Sound Store
 Sound Store is an e-commerce store specialising in musical instruments. The site also provides users with a blog written by the company's staff which gives insight into various topics of musical interest.
 
-Below are images showing the responsiveness of the products page.
+The deployed website can be found here [here](https://sound-store-ms-4.herokuapp.com/)
+The wireframes used during development of the site can be found [here]()
+
+The following are images showing the responsiveness of the products page.
 [Products Desktop](/media/products-desktop.png)
 [Products Ipad](/media/products-tablet.png)
 [Products Mobile](/media/products-mobile.png)
-
-The deployed website can be found here [here](https://sound-store-ms-4.herokuapp.com/)
-The wireframes used during development of the site can be found [here]()
 
 # UX
 ## User Stories:
@@ -186,8 +186,12 @@ base.html consists of the sites navbar with various page navigating links and th
 1. Similar to the edit_blog.html page, this page is for superusers only. If not logged in as an admin, I have no way of accessing this page. All fields except those for images are required and give the expected error message if not filled in. Uploading a blog successfully I can see that it has been added to the blog list page.
 
 ## TESTING A PURCHASE
-1. The purchase feature on the site comes from Stripe Payments (https://stripe.com/ie). When the purchase form is filled out correctly and submitted on the checkout page, I receive both a webhook event in the stripe dashboard aswell as a payment event indicating that the payment has been processed correctly and has been submitted to stripe.
-![Webhook Events](/media/webhook.png) ![Stripe Events](/media/stripe.png)
+1. The purchase feature on the site comes from Stripe Payments (https://stripe.com/ie). When the purchase form is filled out correctly and submitted on the checkout page, I receive both a webhook event in the stripe dashboard aswell as a payment event indicating that the payment has been processed correctly and has been submitted to stripe. 
+
+The following is a screenshot of webhooks in my stripe dashboard.
+![Webhook Events](/media/webhook.png) 
+The following is a screenshot of payment events in my stripe dashboard.
+![Stripe Events](/media/stripe.png)
 2. The webhook feature is for making sure that a payment is submitted, and all the details including who made the purchase etc. are stored in the stripe account in the event of an error during the submission process. 
 
 ## LOGOUT FUNCTIONALITY
@@ -213,7 +217,25 @@ base.html consists of the sites navbar with various page navigating links and th
 2. I had access to multiple devices during development. I had an iPhone 5 and 7, MacBook Pro (13" screen) and another 15" screen laptop aswell as a 21" wide/13" inch high monitor. Using these I could test the sites responsiveness.
 
 # Data Schema
-Seven different models classes contained in models.py files were used for the database schema of the site. 
+Seven different model classes contained in models.py files were used for the database schema of the site. The database is currently deployed to Heroku Postgres. During production, I used the SQLite database which is part of the Django framework. All instances of a model have a unique id that can be used during development.
+
+### the CATEGORY model
+This model is linked to the PRODUCT model via a ForeignKey in that model. It contains just the Category names of products in the store.
+### the PRODUCT model
+This model connects to the Category model and therefore requires a category name to be chosen for it's validation. It contains essential information concerning the product listings in the store such as Name, Price, Brand Image, Product Image, Description and SKU.
+### the USERPROFILE model
+This model is connected to the built-in django User model and so is linked to the registration credentials that a user creates when registering an account. The other fields it contains are all related to the user's address, i.e Phone Number, Street Address 1 and 2, City, County, Postcode and Country.
+### the CONTACT model
+This model allows users to upload a message to the database. I decided to leave it anonymous and so not linked to the Django User model. It contains fields for the sender's name, email address, message and an automatically added field with the time and date the message was sent.
+### the BLOGPOST model
+The blog post model is linked to the django User model and so will automatically have the logged in user's name when the form they fill in is sent. Otherwise the data collected by the model is the blog's Title, Heading(Introduction to main body of the blog), fields for inputting an image and automatically added fields containing information about when the post was uploaded and when it was updated.
+### the ORDER model
+This model collects data about the a particular order a customer has made as well as their address and contact details 
+### the ORDERLINEITEM model
+This model is connected to the Order and Product models and gets information from both in order to calculate the total cost of an order.
+
+
+
 
 # Code Validation
 HTML: the html was validated using the W3C validator from the site https://validator.w3.org/. As can be seen from the following screenshot most, and in the case of this screenshot, all of the errors shown in the validator are related to the django syntax. 
