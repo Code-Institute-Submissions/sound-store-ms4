@@ -6,9 +6,9 @@ The profiles used during development of this website are:
 Sound Store is an e-commerce store specialising in musical instruments. The site also provides users with a blog written by the company's staff which gives insight into various topics of musical interest.
 
 Below are images showing the responsiveness of the products page.
-![Products Desktop](/media/products-desktop.png)
-![Products Ipad](/media/products-tablet.png)
-![Products Mobile](/media/products-mobile.png)
+[Products Desktop](/media/products-desktop.png)
+[Products Ipad](/media/products-tablet.png)
+[Products Mobile](/media/products-mobile.png)
 
 The deployed website can be found here [here](https://sound-store-ms-4.herokuapp.com/)
 The wireframes used during development of the site can be found [here]()
