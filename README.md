@@ -351,3 +351,4 @@ Amazon Web Services S3 was used to store the projects static files and images.
 
 ## 
 Both my mentor Akshat Garg and many people on Slack were very helpful in dealing with bugs encountered during development.
+The Boutique Ado walkthrough project in the course material was instrumental to me learning how to use the django framework.
