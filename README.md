@@ -6,7 +6,7 @@ The profiles used during development of this website are:
 Sound Store is an e-commerce store specialising in musical instruments. The site also provides users with a blog written by the company's staff which gives insight into various topics of musical interest.
 
 The deployed website can be found here [here](https://sound-store-ms-4.herokuapp.com/)
-The wireframes used during development of the site can be found [here]()
+The wireframes used during development of the site can be found [here](sound-store-ms-4.pdf)
 
 The following are images showing the responsiveness of the products page.
 [Products Desktop](/media/products-desktop.png)
@@ -253,7 +253,9 @@ Python: My Python code was validated using the Pep8 validator (http://pep8online
 ### Webhooks bugs
 1. When attempting to send webhook test events, I was receiving a result of "Test webhook error:401". This was fixed by opening up the ports tab in Gitpod and making the 8000 port public.
 2. On another occasion while trying to send a test webhook, I was receiving a result of "Test webhook error:404". This was fixed by updating the region code, i.e. "...eu(number)..." in the gitpod workspace url. This number appeared to change somewhat regularly and so needed to be updated in the stripe endpoint url in the stripe dashboard. 
-3. Due to the superuser being created at the beginning of development before the profiles app was created, the profiles app did not recognise the superuser name and threw an error 404 screen in response to my attempting to login to admin. This was fixed by commenting out the 'if created:' statement in the profiles.models file, logging in with the superuser name and password, and then uncommenting the code. On both the commenting and uncommenting of the 'if' statement, the line inside was indented appropriately in order for the code to work.
+
+### Profiles bugs
+1. Due to the superuser being created at the beginning of development before the profiles app was created, the profiles app did not recognise the superuser name and threw an error 404 screen in response to my attempting to login to admin. This was fixed by commenting out the 'if created:' statement in the profiles.models file, logging in with the superuser name and password, and then uncommenting the code. On both the commenting and uncommenting of the 'if' statement, the line inside was indented appropriately in order for the code to work.
 
 ### Product Admin Bugs
 1. When Testing the admin-only add product form in add_product.html, I successfully added numerous products to the store. I then deleted these products in the admin database. The result of this was that my site become totally unusable. When loading my site using 'python3 manage.py runserver' I was getting a 404 error saying that my home page was not found. I tried undoing all the work I had done leading to this error and redoing it but it did not fix the issue. Finally I found a post on Slack related to this and realised that the products deleted from my database were in my shopping cart at the time and thus were cached in the entire project. I deleted the sessionid from developer tools and this fixed the error. 
